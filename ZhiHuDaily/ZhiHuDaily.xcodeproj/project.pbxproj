@@ -1,0 +1,722 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1963FD2C36DD817663FA8C04 /* Pods_ZhiHuDaily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15129D0FBE12231B4447CADE /* Pods_ZhiHuDaily.framework */; };
+		B546DCF227B8EA2B00D60BF2 /* MainTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B546DCF127B8EA2B00D60BF2 /* MainTableView.m */; };
+		B546DCF527BAAA8A00D60BF2 /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B546DCF427BAAA8A00D60BF2 /* BannerView.m */; };
+		B546DCFB27BB7CC900D60BF2 /* DateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B546DCF927BB7CC900D60BF2 /* DateHeaderView.m */; };
+		B593029C27BCB65F00ADE26D /* UILabel+AutoHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = B593029B27BCB65F00ADE26D /* UILabel+AutoHeight.m */; };
+		B593029F27BD2D9C00ADE26D /* NSTimer+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = B593029E27BD2D9C00ADE26D /* NSTimer+Time.m */; };
+		B59302A727BD58F600ADE26D /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59302A627BD58F600ADE26D /* NewsViewController.m */; };
+		B59302BD27BE29DE00ADE26D /* ManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59302BC27BE29DE00ADE26D /* ManagerViewController.m */; };
+		B59302C127BE2A7C00ADE26D /* NewsImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59302C027BE2A7C00ADE26D /* NewsImage.xcassets */; };
+		B59302C427BE7A0400ADE26D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B59302C327BE7A0400ADE26D /* AppDelegate.m */; };
+		B59302CB27BF73AB00ADE26D /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59302CA27BF73AB00ADE26D /* PersonViewController.m */; };
+		B59302CE27BF740300ADE26D /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = B59302CD27BF740300ADE26D /* LoginView.m */; };
+		B59302D127BF746100ADE26D /* NightAndSettingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B59302D027BF746100ADE26D /* NightAndSettingButton.m */; };
+		B59302D327BF908700ADE26D /* PersonColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59302D227BF908700ADE26D /* PersonColor.xcassets */; };
+		B59302D527BF909700ADE26D /* PersonImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59302D427BF909700ADE26D /* PersonImage.xcassets */; };
+		B59302DA27C0E55200ADE26D /* PopAlterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B59302D927C0E55200ADE26D /* PopAlterView.m */; };
+		B59302DD27C136E300ADE26D /* ArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B59302DC27C136E300ADE26D /* ArticleModel.m */; };
+		B59302E027C1375A00ADE26D /* BarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B59302DF27C1375A00ADE26D /* BarView.m */; };
+		B59302E427C1388100ADE26D /* NewsColor‘.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59302E327C1388100ADE26D /* NewsColor‘.xcassets */; };
+		B5D156A427B633B300657E3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D156A227B633B300657E3A /* Main.storyboard */; };
+		B5D156A627B633B400657E3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D156A527B633B400657E3A /* Assets.xcassets */; };
+		B5D156A927B633B400657E3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D156A727B633B400657E3A /* LaunchScreen.storyboard */; };
+		B5D156AC27B633B400657E3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D156AB27B633B400657E3A /* main.m */; };
+		B5D156C427B6349000657E3A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D156B227B6348F00657E3A /* HomeViewController.m */; };
+		B5D156C527B6349000657E3A /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D156B327B6348F00657E3A /* TopView.m */; };
+		B5D156C727B6349000657E3A /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D156B727B6348F00657E3A /* NewsCell.m */; };
+		B5D156CB27B6349000657E3A /* NetWorkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D156C027B6348F00657E3A /* NetWorkTool.m */; };
+		B5D156D727B6359800657E3A /* EverydayNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D156D627B6359800657E3A /* EverydayNewsModel.m */; };
+		B5D156D927B6359800657E3A /* DayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D156D127B6359800657E3A /* DayModel.m */; };
+		B5D156DA27B6359800657E3A /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D156D427B6359800657E3A /* DataModel.m */; };
+		B5D156E027B63D2000657E3A /* HomeColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D156DF27B63D2000657E3A /* HomeColor.xcassets */; };
+		B5D156E227B63D3500657E3A /* HomeImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D156E127B63D3500657E3A /* HomeImage.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		15129D0FBE12231B4447CADE /* Pods_ZhiHuDaily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhiHuDaily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68E1C1A183EB5134233405C4 /* Pods-ZhiHuDaily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuDaily.release.xcconfig"; path = "Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily.release.xcconfig"; sourceTree = "<group>"; };
+		8B8B83337AF0306C4F10075F /* Pods-ZhiHuDaily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuDaily.debug.xcconfig"; path = "Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily.debug.xcconfig"; sourceTree = "<group>"; };
+		B546DCF027B8EA2B00D60BF2 /* MainTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTableView.h; sourceTree = "<group>"; };
+		B546DCF127B8EA2B00D60BF2 /* MainTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableView.m; sourceTree = "<group>"; };
+		B546DCF327BAAA8A00D60BF2 /* BannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerView.h; sourceTree = "<group>"; };
+		B546DCF427BAAA8A00D60BF2 /* BannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerView.m; sourceTree = "<group>"; };
+		B546DCF927BB7CC900D60BF2 /* DateHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateHeaderView.m; sourceTree = "<group>"; };
+		B546DCFA27BB7CC900D60BF2 /* DateHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateHeaderView.h; sourceTree = "<group>"; };
+		B593029A27BCB65F00ADE26D /* UILabel+AutoHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+AutoHeight.h"; sourceTree = "<group>"; };
+		B593029B27BCB65F00ADE26D /* UILabel+AutoHeight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AutoHeight.m"; sourceTree = "<group>"; };
+		B593029D27BD2D9B00ADE26D /* NSTimer+Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Time.h"; sourceTree = "<group>"; };
+		B593029E27BD2D9C00ADE26D /* NSTimer+Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Time.m"; sourceTree = "<group>"; };
+		B59302A527BD58F600ADE26D /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		B59302A627BD58F600ADE26D /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		B59302BB27BE29DE00ADE26D /* ManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerViewController.h; sourceTree = "<group>"; };
+		B59302BC27BE29DE00ADE26D /* ManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManagerViewController.m; sourceTree = "<group>"; };
+		B59302C027BE2A7C00ADE26D /* NewsImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NewsImage.xcassets; sourceTree = "<group>"; };
+		B59302C227BE7A0400ADE26D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B59302C327BE7A0400ADE26D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B59302C927BF73AB00ADE26D /* PersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
+		B59302CA27BF73AB00ADE26D /* PersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
+		B59302CC27BF740300ADE26D /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		B59302CD27BF740300ADE26D /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		B59302CF27BF746100ADE26D /* NightAndSettingButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NightAndSettingButton.h; sourceTree = "<group>"; };
+		B59302D027BF746100ADE26D /* NightAndSettingButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NightAndSettingButton.m; sourceTree = "<group>"; };
+		B59302D227BF908700ADE26D /* PersonColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PersonColor.xcassets; sourceTree = "<group>"; };
+		B59302D427BF909700ADE26D /* PersonImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PersonImage.xcassets; sourceTree = "<group>"; };
+		B59302D827C0E55200ADE26D /* PopAlterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopAlterView.h; sourceTree = "<group>"; };
+		B59302D927C0E55200ADE26D /* PopAlterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopAlterView.m; sourceTree = "<group>"; };
+		B59302DB27C136E300ADE26D /* ArticleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleModel.h; sourceTree = "<group>"; };
+		B59302DC27C136E300ADE26D /* ArticleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleModel.m; sourceTree = "<group>"; };
+		B59302DE27C1375A00ADE26D /* BarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarView.h; sourceTree = "<group>"; };
+		B59302DF27C1375A00ADE26D /* BarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarView.m; sourceTree = "<group>"; };
+		B59302E327C1388100ADE26D /* NewsColor‘.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "NewsColor‘.xcassets"; sourceTree = "<group>"; };
+		B5D1569627B633B300657E3A /* ZhiHuDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHuDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5D156A327B633B300657E3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5D156A527B633B400657E3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5D156A827B633B400657E3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5D156AA27B633B400657E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5D156AB27B633B400657E3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B5D156B227B6348F00657E3A /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		B5D156B327B6348F00657E3A /* TopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopView.m; sourceTree = "<group>"; };
+		B5D156B727B6348F00657E3A /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
+		B5D156BA27B6348F00657E3A /* TopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopView.h; sourceTree = "<group>"; };
+		B5D156BD27B6348F00657E3A /* NetWorkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkTool.h; sourceTree = "<group>"; };
+		B5D156C027B6348F00657E3A /* NetWorkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkTool.m; sourceTree = "<group>"; };
+		B5D156C127B6348F00657E3A /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		B5D156C227B6348F00657E3A /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
+		B5D156CF27B6359800657E3A /* EverydayNewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EverydayNewsModel.h; sourceTree = "<group>"; };
+		B5D156D127B6359800657E3A /* DayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DayModel.m; sourceTree = "<group>"; };
+		B5D156D227B6359800657E3A /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		B5D156D427B6359800657E3A /* DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		B5D156D527B6359800657E3A /* DayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DayModel.h; sourceTree = "<group>"; };
+		B5D156D627B6359800657E3A /* EverydayNewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EverydayNewsModel.m; sourceTree = "<group>"; };
+		B5D156DF27B63D2000657E3A /* HomeColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = HomeColor.xcassets; sourceTree = "<group>"; };
+		B5D156E127B63D3500657E3A /* HomeImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = HomeImage.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5D1569327B633B300657E3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1963FD2C36DD817663FA8C04 /* Pods_ZhiHuDaily.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		889E3C0B70108FC768DA6A60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15129D0FBE12231B4447CADE /* Pods_ZhiHuDaily.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B566DBE227B76AA70047AC4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B59302E927C1475E00ADE26D /* TopView */,
+				B59302E527C1471A00ADE26D /* MainTableView */,
+				B59302E727C1474800ADE26D /* BannerView */,
+				B59302E827C1475300ADE26D /* DateHeaderView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B566DBE327B76AC40047AC4A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B5D156C227B6348F00657E3A /* NewsCell.h */,
+				B5D156B727B6348F00657E3A /* NewsCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B566DBE427B76ADA0047AC4A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B5D156C127B6348F00657E3A /* HomeViewController.h */,
+				B5D156B227B6348F00657E3A /* HomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B566DBE727B76B0E0047AC4A /* NetworkTool */ = {
+			isa = PBXGroup;
+			children = (
+				B5D156BD27B6348F00657E3A /* NetWorkTool.h */,
+				B5D156C027B6348F00657E3A /* NetWorkTool.m */,
+			);
+			path = NetworkTool;
+			sourceTree = "<group>";
+		};
+		B59302A027BD565900ADE26D /* HomeModular */ = {
+			isa = PBXGroup;
+			children = (
+				B566DBE427B76ADA0047AC4A /* Controller */,
+				B566DBE227B76AA70047AC4A /* View */,
+				B5D156DB27B635C500657E3A /* Model */,
+				B5D156DF27B63D2000657E3A /* HomeColor.xcassets */,
+				B5D156E127B63D3500657E3A /* HomeImage.xcassets */,
+			);
+			path = HomeModular;
+			sourceTree = "<group>";
+		};
+		B59302A227BD56F000ADE26D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				B593029A27BCB65F00ADE26D /* UILabel+AutoHeight.h */,
+				B593029B27BCB65F00ADE26D /* UILabel+AutoHeight.m */,
+				B593029D27BD2D9B00ADE26D /* NSTimer+Time.h */,
+				B593029E27BD2D9C00ADE26D /* NSTimer+Time.m */,
+				B59302CF27BF746100ADE26D /* NightAndSettingButton.h */,
+				B59302D027BF746100ADE26D /* NightAndSettingButton.m */,
+				B59302D827C0E55200ADE26D /* PopAlterView.h */,
+				B59302D927C0E55200ADE26D /* PopAlterView.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		B59302A427BD57D100ADE26D /* NewsModular */ = {
+			isa = PBXGroup;
+			children = (
+				B59302AE27BD5A3600ADE26D /* Controller */,
+				B59302AF27BD5A5000ADE26D /* View */,
+				B59302B027BD5A5900ADE26D /* Model */,
+				B59302E327C1388100ADE26D /* NewsColor‘.xcassets */,
+				B59302C027BE2A7C00ADE26D /* NewsImage.xcassets */,
+			);
+			path = NewsModular;
+			sourceTree = "<group>";
+		};
+		B59302AE27BD5A3600ADE26D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B59302A527BD58F600ADE26D /* NewsViewController.h */,
+				B59302A627BD58F600ADE26D /* NewsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B59302AF27BD5A5000ADE26D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B59302DE27C1375A00ADE26D /* BarView.h */,
+				B59302DF27C1375A00ADE26D /* BarView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B59302B027BD5A5900ADE26D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B59302DB27C136E300ADE26D /* ArticleModel.h */,
+				B59302DC27C136E300ADE26D /* ArticleModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B59302BA27BE299000ADE26D /* ControllerManager */ = {
+			isa = PBXGroup;
+			children = (
+				B59302BB27BE29DE00ADE26D /* ManagerViewController.h */,
+				B59302BC27BE29DE00ADE26D /* ManagerViewController.m */,
+			);
+			path = ControllerManager;
+			sourceTree = "<group>";
+		};
+		B59302C827BF733700ADE26D /* PersonModular */ = {
+			isa = PBXGroup;
+			children = (
+				B59302D627C0DABE00ADE26D /* Controller */,
+				B59302D727C0DAD200ADE26D /* View */,
+				B59302D227BF908700ADE26D /* PersonColor.xcassets */,
+				B59302D427BF909700ADE26D /* PersonImage.xcassets */,
+			);
+			path = PersonModular;
+			sourceTree = "<group>";
+		};
+		B59302D627C0DABE00ADE26D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B59302C927BF73AB00ADE26D /* PersonViewController.h */,
+				B59302CA27BF73AB00ADE26D /* PersonViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B59302D727C0DAD200ADE26D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B59302CC27BF740300ADE26D /* LoginView.h */,
+				B59302CD27BF740300ADE26D /* LoginView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B59302E527C1471A00ADE26D /* MainTableView */ = {
+			isa = PBXGroup;
+			children = (
+				B546DCF027B8EA2B00D60BF2 /* MainTableView.h */,
+				B546DCF127B8EA2B00D60BF2 /* MainTableView.m */,
+				B566DBE327B76AC40047AC4A /* Cell */,
+			);
+			path = MainTableView;
+			sourceTree = "<group>";
+		};
+		B59302E727C1474800ADE26D /* BannerView */ = {
+			isa = PBXGroup;
+			children = (
+				B546DCF327BAAA8A00D60BF2 /* BannerView.h */,
+				B546DCF427BAAA8A00D60BF2 /* BannerView.m */,
+			);
+			path = BannerView;
+			sourceTree = "<group>";
+		};
+		B59302E827C1475300ADE26D /* DateHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				B546DCFA27BB7CC900D60BF2 /* DateHeaderView.h */,
+				B546DCF927BB7CC900D60BF2 /* DateHeaderView.m */,
+			);
+			path = DateHeaderView;
+			sourceTree = "<group>";
+		};
+		B59302E927C1475E00ADE26D /* TopView */ = {
+			isa = PBXGroup;
+			children = (
+				B5D156BA27B6348F00657E3A /* TopView.h */,
+				B5D156B327B6348F00657E3A /* TopView.m */,
+			);
+			path = TopView;
+			sourceTree = "<group>";
+		};
+		B5D1568D27B633B300657E3A = {
+			isa = PBXGroup;
+			children = (
+				B59302C227BE7A0400ADE26D /* AppDelegate.h */,
+				B59302C327BE7A0400ADE26D /* AppDelegate.m */,
+				B5D1569827B633B300657E3A /* ZhiHuDaily */,
+				B5D1569727B633B300657E3A /* Products */,
+				D36769D9F94A4EBC2222C0EC /* Pods */,
+				889E3C0B70108FC768DA6A60 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B5D1569727B633B300657E3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5D1569627B633B300657E3A /* ZhiHuDaily.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5D1569827B633B300657E3A /* ZhiHuDaily */ = {
+			isa = PBXGroup;
+			children = (
+				B59302BA27BE299000ADE26D /* ControllerManager */,
+				B59302A027BD565900ADE26D /* HomeModular */,
+				B59302A427BD57D100ADE26D /* NewsModular */,
+				B59302C827BF733700ADE26D /* PersonModular */,
+				B566DBE727B76B0E0047AC4A /* NetworkTool */,
+				B59302A227BD56F000ADE26D /* Category */,
+				B5D156A527B633B400657E3A /* Assets.xcassets */,
+				B5D156A727B633B400657E3A /* LaunchScreen.storyboard */,
+				B5D156A227B633B300657E3A /* Main.storyboard */,
+				B5D156AA27B633B400657E3A /* Info.plist */,
+				B5D156AB27B633B400657E3A /* main.m */,
+			);
+			path = ZhiHuDaily;
+			sourceTree = "<group>";
+		};
+		B5D156DB27B635C500657E3A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5D156CF27B6359800657E3A /* EverydayNewsModel.h */,
+				B5D156D627B6359800657E3A /* EverydayNewsModel.m */,
+				B5D156D527B6359800657E3A /* DayModel.h */,
+				B5D156D127B6359800657E3A /* DayModel.m */,
+				B5D156D227B6359800657E3A /* DataModel.h */,
+				B5D156D427B6359800657E3A /* DataModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D36769D9F94A4EBC2222C0EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B8B83337AF0306C4F10075F /* Pods-ZhiHuDaily.debug.xcconfig */,
+				68E1C1A183EB5134233405C4 /* Pods-ZhiHuDaily.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5D1569527B633B300657E3A /* ZhiHuDaily */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5D156AF27B633B400657E3A /* Build configuration list for PBXNativeTarget "ZhiHuDaily" */;
+			buildPhases = (
+				367B08BA904C9C313D2C4024 /* [CP] Check Pods Manifest.lock */,
+				B5D1569227B633B300657E3A /* Sources */,
+				B5D1569327B633B300657E3A /* Frameworks */,
+				B5D1569427B633B300657E3A /* Resources */,
+				CA3679ABCAC2E87ED93D1D95 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZhiHuDaily;
+			productName = ZhiHuDaily;
+			productReference = B5D1569627B633B300657E3A /* ZhiHuDaily.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5D1568E27B633B300657E3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					B5D1569527B633B300657E3A = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = B5D1569127B633B300657E3A /* Build configuration list for PBXProject "ZhiHuDaily" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5D1568D27B633B300657E3A;
+			productRefGroup = B5D1569727B633B300657E3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5D1569527B633B300657E3A /* ZhiHuDaily */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5D1569427B633B300657E3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B59302C127BE2A7C00ADE26D /* NewsImage.xcassets in Resources */,
+				B5D156A927B633B400657E3A /* LaunchScreen.storyboard in Resources */,
+				B5D156E227B63D3500657E3A /* HomeImage.xcassets in Resources */,
+				B59302D527BF909700ADE26D /* PersonImage.xcassets in Resources */,
+				B5D156A627B633B400657E3A /* Assets.xcassets in Resources */,
+				B5D156E027B63D2000657E3A /* HomeColor.xcassets in Resources */,
+				B59302D327BF908700ADE26D /* PersonColor.xcassets in Resources */,
+				B5D156A427B633B300657E3A /* Main.storyboard in Resources */,
+				B59302E427C1388100ADE26D /* NewsColor‘.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		367B08BA904C9C313D2C4024 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZhiHuDaily-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA3679ABCAC2E87ED93D1D95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5D1569227B633B300657E3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B59302C427BE7A0400ADE26D /* AppDelegate.m in Sources */,
+				B5D156C527B6349000657E3A /* TopView.m in Sources */,
+				B5D156D927B6359800657E3A /* DayModel.m in Sources */,
+				B546DCF227B8EA2B00D60BF2 /* MainTableView.m in Sources */,
+				B59302DD27C136E300ADE26D /* ArticleModel.m in Sources */,
+				B59302CB27BF73AB00ADE26D /* PersonViewController.m in Sources */,
+				B59302D127BF746100ADE26D /* NightAndSettingButton.m in Sources */,
+				B546DCFB27BB7CC900D60BF2 /* DateHeaderView.m in Sources */,
+				B5D156D727B6359800657E3A /* EverydayNewsModel.m in Sources */,
+				B59302DA27C0E55200ADE26D /* PopAlterView.m in Sources */,
+				B5D156C727B6349000657E3A /* NewsCell.m in Sources */,
+				B546DCF527BAAA8A00D60BF2 /* BannerView.m in Sources */,
+				B593029C27BCB65F00ADE26D /* UILabel+AutoHeight.m in Sources */,
+				B5D156CB27B6349000657E3A /* NetWorkTool.m in Sources */,
+				B5D156DA27B6359800657E3A /* DataModel.m in Sources */,
+				B593029F27BD2D9C00ADE26D /* NSTimer+Time.m in Sources */,
+				B59302BD27BE29DE00ADE26D /* ManagerViewController.m in Sources */,
+				B59302A727BD58F600ADE26D /* NewsViewController.m in Sources */,
+				B5D156AC27B633B400657E3A /* main.m in Sources */,
+				B59302CE27BF740300ADE26D /* LoginView.m in Sources */,
+				B59302E027C1375A00ADE26D /* BarView.m in Sources */,
+				B5D156C427B6349000657E3A /* HomeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B5D156A227B633B300657E3A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5D156A327B633B300657E3A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B5D156A727B633B400657E3A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5D156A827B633B400657E3A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B5D156AD27B633B400657E3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B5D156AE27B633B400657E3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5D156B027B633B400657E3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B8B83337AF0306C4F10075F /* Pods-ZhiHuDaily.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MFF5WD4K94;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sungkaikai.ZhiHuDaily;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5D156B127B633B400657E3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68E1C1A183EB5134233405C4 /* Pods-ZhiHuDaily.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MFF5WD4K94;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sungkaikai.ZhiHuDaily;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5D1569127B633B300657E3A /* Build configuration list for PBXProject "ZhiHuDaily" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5D156AD27B633B400657E3A /* Debug */,
+				B5D156AE27B633B400657E3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5D156AF27B633B400657E3A /* Build configuration list for PBXNativeTarget "ZhiHuDaily" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5D156B027B633B400657E3A /* Debug */,
+				B5D156B127B633B400657E3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B5D1568E27B633B300657E3A /* Project object */;
+}
