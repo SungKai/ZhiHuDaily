@@ -10,7 +10,7 @@
 #import "ArticleModel.h"
 #import "BarView.h"
 #import <WebKit/WebKit.h>
-@interface NewsViewController ()
+@interface NewsViewController () <BarViewDelegate>
 @property (nonatomic, strong) ArticleModel *model;
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) BarView *barView;
@@ -61,11 +61,13 @@
 - (BarView *)barView{
     if (!_barView){
         _barView = [[BarView alloc]init];
-        __weak typeof(self) weakSelf = self;
-        _barView.back = ^{
-            [weakSelf.navigationController popToRootViewControllerAnimated:YES];
-        };
+        _barView.barDelegate = self;
     }
     return _barView;
+}
+#pragma mark - <BarViewDelegate>
+//返回主界面
+- (void)back{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 @end

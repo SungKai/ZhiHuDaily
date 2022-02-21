@@ -16,7 +16,7 @@
 #import <UIImageView+AFNetworking.h>
 #import "NSTimer+Time.h"
 
-@interface HomeViewController ()<SourseNewsDelegate, UITableViewDelegate, BannerDelegate, MainTableDelegate, UIScrollViewDelegate>
+@interface HomeViewController ()<SourseNewsDelegate, UITableViewDelegate, BannerDelegate, MainTableDelegate, UIScrollViewDelegate,TopViewDelegate>
 @property (nonatomic, strong) TopView *topView;
 @property (nonatomic, strong) BannerView *bannerView;
 @property (nonatomic, strong) MainTableView *mainTableView;
@@ -67,15 +67,7 @@
 - (TopView *)topView{
     if (!_topView){
         _topView = [[TopView alloc]initWithTop];
-        __weak typeof(self) weakSelf_top= self;
-        _topView.topTap = ^{
-            [weakSelf_top.mainTableView setContentOffset:CGPointMake(0, 0) animated:YES];
-        };
-        //界面跳转到个人登陆页
-        __weak typeof(self) weakSelf_logIn= self;
-        _topView.loginView = ^{
-            [weakSelf_logIn.navigationController pushViewController:[weakSelf_logIn.homeDelegate jumpToLogin] animated:YES];
-        };
+        _topView.topDelegate = self;
     }
     return _topView;
 }
@@ -85,22 +77,6 @@
         _mainTableView.dataSource = self.everydayModel;
         _mainTableView.mainDelegate = self;
         _mainTableView.backgroundColor = [UIColor colorNamed:@"255_255_255&26_26_26"];
-        _mainTableView.everydayModel = self.everydayModel;
-        //Block传递过往请求的section
-        __weak typeof(self) weakSelf_before = self;
-        _mainTableView.nextSectionBlock = ^(NSInteger section) {
-            [weakSelf_before nextSection:section];
-        };
-        //Block传递日期给dateView
-        __weak typeof(self) weakSelf_date = self;
-        _mainTableView.gainDate = ^NSString * _Nonnull(NSInteger section) {
-                return weakSelf_date.everydayModel.everydayNews[section].date;
-        };
-        //Block把cell的indexPath通过代理传递给管理者ManagerViewController跳转进新闻详情页
-        __weak typeof(self) weakSelf_article = self;
-        _mainTableView.deliverTheIndexPath = ^(NSIndexPath * _Nonnull indexPath) {
-            [weakSelf_article deliverTheIndexPath:indexPath];
-        };
     }
     return _mainTableView;
 }
@@ -109,7 +85,7 @@
         _bannerView = [[BannerView alloc]initWithFrame:CGRectMake(0, 0, DEVICESCREENWIDTH, DEVICESCREENWIDTH)];
         _bannerView.dataSource = self.everydayModel;
         _bannerView.bannerDelegate = self;
-        _bannerView.scrollerView.delegate = self;
+        _bannerView.scrollView.delegate = self;
     }
     return _bannerView;
 }
@@ -183,11 +159,38 @@
     //界面跳转
     [self.navigationController pushViewController:newsController animated:YES];
 }
-#pragma mark - MainTableDelegate
+#pragma mark - <TopViewDelegate>
+//点击topView回到顶部
+- (void)topTap{
+    [self.mainTableView setContentOffset:CGPointMake(0, 0) animated:YES];
+}
+//跳转登陆页
+- (void)loginView{
+    [self.navigationController pushViewController:[self.homeDelegate jumpToLogin] animated:YES];
+}
+//点击头像进入个人登陆页
+#pragma mark - <MainTableDelegate>
+//点击cell,把indexPath传给HomeViewController来进行页面跳转
+- (void)gainIndexPath:(NSIndexPath *)indexPath{
+    [self deliverTheIndexPath:indexPath];
+}
+//当下滑到每一组最后一个cell时，调用此方法来网络请求前一天的数据
+- (void)nextSectionBlock:(NSInteger)section{
+    [self nextSection:section];
+}
+//传递日期给dateView
+- (NSString *)gainDate:(NSInteger)section{
+    return self.everydayModel.everydayNews[section].date;
+}
+//让HomeViewController传递一个everydayModel.everydayNews给MainTableView，来在请求Before数据的时候判断，防止刷新率过高
+- (NSInteger)everydayNewsCount{
+    NSLog(@"uuuuuuuuuuu uu u        %ld", self.everydayModel.everydayNews.count);
+    return self.everydayModel.everydayNews.count;
+}
 //banner拉伸放大功能
 - (void)bannerOffset:(CGPoint)offset{
 //    BannerView *banner = self.bannerView;
-//    CGRect rect = self.bannerView.scrollerView.frame;
+//    CGRect rect = self.bannerView.scrollView.frame;
 //    rect.origin.y = offset.y;
 //    rect.origin.x = offset.x;
 //    NSLog(@"ppppppppp           %f", rect.origin.y);
@@ -195,10 +198,10 @@
 //    NSLog(@"sssssssss           %f", rect.size.height);
 //
 ////    self.bannerView.frame = rect;
-//    self.bannerView.scrollerView.frame = rect;
+//    self.bannerView.scrollView.frame = rect;
 //    self.mainTableView.tableHeaderView.frame = rect;
 //    self.bannerView.image.frame = rect;
-//    self.bannerView.image.frame = self.bannerView.scrollerView.frame;
+//    self.bannerView.image.frame = self.bannerView.scrollView.frame;
 }
 
 

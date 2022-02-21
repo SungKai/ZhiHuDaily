@@ -124,7 +124,7 @@
 
 //返回主界面
 - (void)backToHomeView{
-    self.back();
+    [self.barDelegate back];
 }
 //点赞的事件
 - (void)likeClick:(UIButton*)button{

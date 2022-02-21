@@ -21,7 +21,7 @@
     if (self){
         self.backgroundColor = [UIColor lightGrayColor];
         self.dataArray = [[NSArray alloc]init];
-        [self addSubview:self.scrollerView];
+        [self addSubview:self.scrollView];
     }
     return self;
 }
@@ -39,7 +39,7 @@
     for (int i = 0; i < 5; i++){
         //设置图片
         self.image = [[UIImageView alloc]init];
-        self.image.frame = CGRectMake(DEVICESCREENWIDTH * i, 0, self.scrollerView.frame.size.width, self.scrollerView.frame.size.height);
+        self.image.frame = CGRectMake(DEVICESCREENWIDTH * i, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
         [self.image setImageWithURL:[NSURL URLWithString:self.dataArray[i].image] placeholderImage:[UIImage imageNamed:@"defaultImage"]];
         //title
         NSString *titleText = self.dataArray[i].title;
@@ -58,7 +58,7 @@
         [self.image addGestureRecognizer:touchGesture];
         [self.image addSubview:titleLab];
         [self.image addSubview:hintLab];
-        [self.scrollerView addSubview:self.image];
+        [self.scrollView addSubview:self.image];
     }
 }
 #pragma mark - 方法
@@ -88,18 +88,18 @@
     return hintLab;
 }
 #pragma mark - 懒加载
-- (UIScrollView *)scrollerView{
-    if (!_scrollerView){
-        _scrollerView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, DEVICESCREENWIDTH, DEVICESCREENWIDTH)];
-        _scrollerView.bounces = NO;
-//        _scrollerView.delegate = self;
-        _scrollerView.showsHorizontalScrollIndicator = NO;
+- (UIScrollView *)scrollView{
+    if (!_scrollView){
+        _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, DEVICESCREENWIDTH, DEVICESCREENWIDTH)];
+        _scrollView.bounces = NO;
+//        _scrollView.delegate = self;
+        _scrollView.showsHorizontalScrollIndicator = NO;
         //设置滚动范围
-        _scrollerView.contentSize = CGSizeMake(5 * DEVICESCREENWIDTH, 0);
+        _scrollView.contentSize = CGSizeMake(5 * DEVICESCREENWIDTH, 0);
         //分页功能
-        _scrollerView.pagingEnabled = YES;
+        _scrollView.pagingEnabled = YES;
     }
-    return _scrollerView;
+    return _scrollView;
 }
 //pageControl
 - (UIPageControl *)pageControl{
@@ -133,7 +133,7 @@
     if (page == 5){
         page = 0;
     }
-    [self.scrollerView setContentOffset:CGPointMake(page * DEVICESCREENWIDTH, 0) animated:YES];
+    [self.scrollView setContentOffset:CGPointMake(page * DEVICESCREENWIDTH, 0) animated:YES];
     self.pageControl.currentPage = page;
 }
 @end

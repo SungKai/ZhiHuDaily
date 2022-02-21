@@ -9,8 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
 NS_ASSUME_NONNULL_BEGIN
+//代理
+@protocol BarViewDelegate <NSObject>
+@required
+//返回主界面
+- (void)back;
+@end
 
 @interface BarView : UIView
+//代理
+@property (nonatomic, strong) id <BarViewDelegate> barDelegate;
 @property (nonatomic, strong) UIButton *backBtn;
 @property (nonatomic, strong) UIButton *commentBtn;
 @property (nonatomic, strong) UIButton *likeBtn;
@@ -20,8 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *likeNumLab;
 @property (nonatomic, strong) UIView *divider;
 @property (nonatomic, strong) WKWebView *webView;
-//backBtn返回主界面
-@property (nonatomic, copy) void(^back)(void);
 //设置数据
 - (void)setDataComments:(NSInteger)commentsNum AndLikeNum:(NSInteger)likeNum;
 //传进来一个WebView用来展示提示框

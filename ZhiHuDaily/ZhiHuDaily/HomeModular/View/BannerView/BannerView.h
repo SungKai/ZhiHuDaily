@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 //代理
 @property (nonatomic, weak)id <BannerDelegate> bannerDelegate;
 @property (nonatomic, strong) NSArray<DataModel *> *dataArray;
-@property (nonatomic, strong) UIScrollView *scrollerView;
+@property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong, nullable) NSTimer *timer;
 @property (nonatomic, strong) UIImageView *image;

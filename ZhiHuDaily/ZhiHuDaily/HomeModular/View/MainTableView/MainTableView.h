@@ -16,19 +16,21 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 //banner滑动放大
 - (void)bannerOffset:(CGPoint)offset;
+//数据传递，当滑到footerView的时候去触发加载Before数据
+- (void)nextSectionBlock:(NSInteger)section;
+//得到每日日期
+- (NSString *)gainDate:(NSInteger)section;
+//点击cell,把indexPath传给HomeViewController来进行页面跳转
+- (void)gainIndexPath:(NSIndexPath *)indexPath;
+//让HomeViewController传递一个everydayModel.everydayNews给MainTableView，来在请求Before数据的时候判断，防止刷新率过高
+- (NSInteger)everydayNewsCount;
 @end
 
 @interface MainTableView : UITableView
 //代理
 @property (nonatomic, weak)id <MainTableDelegate> mainDelegate;
-//数据传递，当滑到footerView的时候去触发加载Before数据
-@property (nonatomic, copy) void(^nextSectionBlock)(NSInteger section);
-//得到每日日期
-@property (nonatomic, copy) NSString *(^gainDate)(NSInteger section);
-//点击cell,把indexPath传给HomeViewController来进行页面跳转
-@property (nonatomic, copy) void(^deliverTheIndexPath)(NSIndexPath* indexPath);
 @property (nonatomic, copy) NSString *date;
-@property (nonatomic, strong)EverydayNewsModel *everydayModel;
+
 //创建cell的方法
 - (NewsCell *)creatFromTableView:(UITableView *)tableView;
 

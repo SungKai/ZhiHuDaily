@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIViewController *)deliverTheID:(NSString *)ID;
 //点击头像，跳转到登陆页
 - (UIViewController *)jumpToLogin;
+
 @end
 
 @interface HomeViewController : UIViewController

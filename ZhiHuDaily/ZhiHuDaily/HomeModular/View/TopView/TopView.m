@@ -21,7 +21,6 @@
         //单击TopView回到顶部
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(upToTop)];
         [self addGestureRecognizer:tap];
-        [self calculateTime];
         [self addSubview:self.dayLab];
         [self addSubview:self.monthLab];
         [self addSubview:self.mainTitle];
@@ -34,17 +33,22 @@
 #pragma mark - 方法
 //单击TopView回到顶部
 - (void)upToTop{
-    self.topTap();
+    [self.topDelegate topTap];
 }
 #pragma mark - 懒加载
 //dayLab
 - (UILabel *)dayLab{
     if (!_dayLab){
         _dayLab = [[UILabel alloc]init];
-        _dayLab.text = [NSString stringWithFormat:@"%lu", self.dateCom.day];
         _dayLab.textAlignment = NSTextAlignmentCenter;
         _dayLab.font = [UIFont boldSystemFontOfSize:20];
         _dayLab.textColor = [UIColor colorNamed:@"68_68_68&129_129_129"];
+        //计算时间
+        NSDate *date =[NSDate date];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+        formatter.dateFormat = @"d";
+        NSString *day = [formatter stringFromDate:date];
+        _dayLab.text = day;
     }
     return _dayLab;
 }
@@ -52,10 +56,15 @@
 - (UILabel *)monthLab{
     if (!_monthLab){
         _monthLab = [[UILabel alloc]init];
-        _monthLab.text = self.monthText;
         _monthLab.font = [UIFont systemFontOfSize:13];
         _monthLab.textAlignment = NSTextAlignmentCenter;
         _monthLab.textColor = [UIColor colorNamed:@"68_68_68&129_129_129"];
+        //计算时间
+        NSDate *date =[NSDate date];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+        formatter.dateFormat = @"M";
+        NSString *month = [formatter stringFromDate:date];
+        _monthLab.text = [self transformMonth:month];
     }
     return _monthLab;
 }
@@ -89,21 +98,13 @@
     }
     return _mainTitle;
 }
-//计算时间
-- (void)calculateTime{
-    NSDate *date = [[NSDate alloc]init];
-    //创建日历对象,取到日期对象的各个部分
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    self.dateCom = [calendar components:NSCalendarUnitDay | NSCalendarUnitMonth fromDate:date];
-    [self transformMonth];
-}
 //把月份的数字转换为文字
-- (void)transformMonth{ 
+- (NSString *)transformMonth:(NSString *)month{
     //设置数字数组
     NSArray *numberArray = @[@"1", @"2",@"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12"];
     NSArray *stringArray = @[@"一月", @"二月",@"三月", @"四月", @"五月", @"六月", @"七月", @"八月", @"九月", @"十月", @"十一月", @"十二月"];
     NSDictionary *dict = [NSDictionary dictionaryWithObjects:stringArray forKeys:numberArray];
-    self.monthText = [dict objectForKey:[NSString stringWithFormat:@"%lu", self.dateCom.month]];
+    return [dict objectForKey:month];
 }
 //设置尺寸
 - (void)setPosition{
@@ -145,7 +146,7 @@
 //跳转到登陆页
 - (void)login{
     //跳转
-    self.loginView();
+    [self.topDelegate loginView];
 }
 //判断是否已经登陆
 - (NSString *)judgeTheAvatar{
