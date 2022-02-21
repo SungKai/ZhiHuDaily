@@ -166,7 +166,7 @@
 - (UILabel *)nameLab{
     if (!_nameLab){
         _nameLab = [[UILabel alloc]init];
-        _nameLab.text = @"宋嘉明";
+        _nameLab.text = @"Sung";
         _nameLab.textAlignment = NSTextAlignmentCenter;
         _nameLab.font = [UIFont boldSystemFontOfSize:23];
         _nameLab.textColor = [UIColor colorNamed:@"0_0_0&154_153_154"];
