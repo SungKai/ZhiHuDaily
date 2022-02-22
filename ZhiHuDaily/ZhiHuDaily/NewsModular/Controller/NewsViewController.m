@@ -4,8 +4,7 @@
 //
 //  Created by 宋开开 on 2022/2/17.
 //
-#define DEVICESCREENWIDTH [[UIScreen mainScreen]bounds].size.width
-#define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
+  
 #import "NewsViewController.h"
 #import "ArticleModel.h"
 #import "BarView.h"

@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIView *divider;
 @property (nonatomic, strong) UILabel *mainTitle;
 @property (nonatomic, strong) UIButton *personButton;
-
+//初始化
 - (instancetype)initWithTop;
 //设置尺寸
 - (void)setPosition;

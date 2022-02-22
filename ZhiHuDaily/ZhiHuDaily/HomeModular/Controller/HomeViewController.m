@@ -16,7 +16,7 @@
 #import <UIImageView+AFNetworking.h>
 #import "NSTimer+Time.h"
 
-@interface HomeViewController ()<SourseNewsDelegate, UITableViewDelegate, BannerDelegate, MainTableDelegate, UIScrollViewDelegate,TopViewDelegate>
+@interface HomeViewController ()<BannerDelegate, MainTableDelegate, UIScrollViewDelegate,TopViewDelegate>
 @property (nonatomic, strong) TopView *topView;
 @property (nonatomic, strong) BannerView *bannerView;
 @property (nonatomic, strong) MainTableView *mainTableView;
@@ -45,7 +45,7 @@
     [self loadNewData];
     
 }
-//刷新，使登陆或退出后点击返回主界面时TopView的头像作出对应变
+//刷新，使登陆或退出后点击返回主界面时TopView的头像作出对应变化
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.topView reloadData];
@@ -54,7 +54,6 @@
 - (EverydayNewsModel *)everydayModel{
     if (!_everydayModel){
         _everydayModel = [[EverydayNewsModel<UITableViewDataSource> alloc]init];
-        _everydayModel.sourseNewsDelegate = self;
     }
     return _everydayModel;
 }
@@ -68,7 +67,6 @@
 - (MainTableView *)mainTableView{
     if (!_mainTableView){
         _mainTableView = [[MainTableView alloc]initWithFrame:CGRectMake(0, 85, DEVICESCREENWIDTH, DEVICESCREENHEIGHT - 85) style:UITableViewStyleGrouped];
-        _mainTableView.dataSource = self.everydayModel;
         _mainTableView.mainDelegate = self;
         _mainTableView.backgroundColor = [UIColor colorNamed:@"255_255_255&26_26_26"];
         _mainTableView.tableHeaderView = self.bannerView;
@@ -86,20 +84,9 @@
 #pragma mark - 方法
 //下拉刷新
 - (void)refreshTableView{
-    //延迟1s执行，否则正在刷新时新cell已经显示
     [self loadNewData];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        //刷新后新增cell
-//        [self.mainTableView reloadData];
-//        //判断是否正在下拉刷新状态，若是 停止刷新
-//        if ([self.mainTableView.refreshControl isRefreshing]) {
-//            [self.mainTableView.refreshControl endRefreshing];
-//        }
-//    });
 }
-
 //加载最新数据
-//刷新单独处理成一个方法，扩展性
 - (void)loadNewData{
     __weak typeof(self) weakSelf = self;
     [self.everydayModel gainLatestData:^{
@@ -107,26 +94,19 @@
         if ([self.mainTableView.refreshControl isRefreshing]) {
             [self.mainTableView.refreshControl endRefreshing];
         }
-        NSLog(@"latest             self.mainTableView reloadData");
-        
+        //把加载来的数据传递到banner的model里面，
         NSMutableArray<BannerModel *> *bannerModelArray = [NSMutableArray array];
-        for (int i = 0; i<weakSelf.everydayModel.everydayNews[0].top_stories.count; i++) {
+        for (int i = 0; i < weakSelf.everydayModel.everydayNews[0].top_stories.count; i++) {
             DataModel *dataModel = weakSelf.everydayModel.everydayNews[0].top_stories[i];
+            //
             BannerModel *bannerModel =[[BannerModel alloc]initWithImage:dataModel.image title:dataModel.title hint:dataModel.hint ID:dataModel.ID];
             [bannerModelArray addObject:bannerModel];
         }
         weakSelf.bannerView.dataArray = bannerModelArray;
-        NSLog(@"aaaaaaaa        %@", weakSelf.everydayModel.everydayNews[0].top_stories[1].title);
+        //主页tableView数据传递
+        weakSelf.mainTableView.everydayNews = weakSelf.everydayModel.everydayNews;
         //刷新cell
         [weakSelf.mainTableView reloadData];
-        
-    }];
-}
-//当下滑到每一组最后一个cell时，调用此方法来网络请求前一天的数据
-- (void)nextSection:(NSInteger)section{
-    [self.everydayModel gainBeforeDataAndDate:self.everydayModel.everydayNews.lastObject.date And:^{
-        NSLog(@"self.mainTableView reloadData");
-        [self.mainTableView reloadData];
     }];
 }
 //进新闻详情页,根据传进来的indexPath找到相应的文章ID
@@ -138,19 +118,7 @@
     //界面跳转
     [self.navigationController pushViewController:newsController animated:YES];
 }
-
-#pragma mark - <SourseNewsDelegate>
-//根据dataModel创建cell
-- (UITableViewCell *)tableView:(UITableView *)tableView SourseNewsForSourse:(DataModel *)dataModel{
-    if (dataModel == nil){
-        //无数据状态
-        return [self.mainTableView creatFromTableView:tableView];
-    }else{
-        NewsCell *newsCell = [self.mainTableView creatFromTableView:tableView];
-        return [newsCell cellWithInformation:newsCell WithTitleText:dataModel.title WithHintText:dataModel.hint WithImageURL:dataModel.imageURL];
-    }
-}
-
+//传递滚动数据
 - (void)scrollViewWithIsScrolling:(BOOL)isScrolling offsetY:(CGFloat)offsetY{
     self.bannerView.isScrolling = isScrolling;
     self.bannerView.offsetY = offsetY;
@@ -181,16 +149,16 @@
 }
 //当下滑到每一组最后一个cell时，调用此方法来网络请求前一天的数据
 - (void)nextSectionBlock:(NSInteger)section{
-    [self nextSection:section];
+    __weak typeof(self) weakSelf = self;
+    [self.everydayModel gainBeforeDataAndDate:self.everydayModel.everydayNews.lastObject.date And:^{
+        weakSelf.mainTableView.everydayNews = weakSelf.everydayModel.everydayNews;
+        [self.mainTableView reloadData];
+    }];
 }
 //传递日期给dateView
 - (NSString *)gainDate:(NSInteger)section{
     return self.everydayModel.everydayNews[section].date;
 }
-//让HomeViewController传递一个everydayModel.everydayNews给MainTableView，来在请求Before数据的时候判断，防止刷新率过高
-- (NSInteger)everydayNewsCount{
-    NSLog(@"uuuuuuuuuuu uu u        %ld", self.everydayModel.everydayNews.count);
-    return self.everydayModel.everydayNews.count;
-}
+
 
 @end

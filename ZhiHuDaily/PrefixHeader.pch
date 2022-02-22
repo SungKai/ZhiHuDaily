@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  ZhiHuDaily
+//
+//  Created by 宋开开 on 2022/2/22.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+//偏好设置的宏定义
+#define USERDEFAULTS [NSUserDefaults standardUserDefaults]
+//屏幕的宽和长
+#define DEVICESCREENWIDTH [[UIScreen mainScreen]bounds].size.width
+#define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
+
+#endif /* PrefixHeader_pch */

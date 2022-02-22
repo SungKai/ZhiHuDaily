@@ -15,13 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)deliverBannerID:(NSString *)ID;
 @end
 
-
 @interface BannerView : UIView <UIGestureRecognizerDelegate>
 //代理
 @property (nonatomic, weak)id <BannerDelegate> bannerDelegate;
-
 @property (nonatomic, strong) NSArray<BannerModel *> *dataArray;
-
 @property (nonatomic,assign) BOOL isScrolling;
 @property (nonatomic,assign) CGFloat offsetY;
 @end

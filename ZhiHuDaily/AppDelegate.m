@@ -13,6 +13,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     HomeViewController *homeVC = [[HomeViewController alloc]init];
+    //设置homeViewController的代理为Manager
     homeVC.homeDelegate = self.managerVC;
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:homeVC];
     self.window.rootViewController = nav;

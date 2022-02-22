@@ -7,16 +7,43 @@
 
 #import "NetWorkTool.h"
 
+static id _instance;
 @implementation NetworkTool
-//单例模式
+//提供类方法让外界访问唯一的实例
 + (instancetype)shareNetworkTool{
-    static NetworkTool *instance;
+    @synchronized (self) {
+        if (_instance == nil) {
+            _instance = [[self alloc] init];
+        }
+    }
+    return _instance;
+}
+//创建
+- (instancetype)init{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"https://news-at.zhihu.com/api/3/"]];
+        _instance = [super init];
+        NSURL *baseURL = [NSURL URLWithString:@"https://news-at.zhihu.com/api/3"];
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        _instance = [[NetworkTool alloc] initWithBaseURL:baseURL sessionConfiguration:config];
     });
-    return instance;
+    return _instance;
 }
+
+//重写allocWithZone:方法
++ (instancetype)allocWithZone:(struct _NSZone *)zone{
+    @synchronized (self) {
+        if (_instance == nil) {
+            _instance = [super allocWithZone:zone];
+        }
+    }
+    return _instance;
+}
+//实现copyWithZone方法
+- (id)copyWithZone:(struct _NSZone *)zone{
+    return _instance;
+}
+
 //网络请求
 //最新新闻
 - (void)latest:(void(^)(NSDictionary *))diliverLatest{

@@ -4,11 +4,9 @@
 //
 //  Created by 宋开开 on 2022/2/5.
 //
-//伪登陆的NSUserDefaults的宏定义
-#define USERDEFAULTS [NSUserDefaults standardUserDefaults]
+
 //屏幕的宽和高
-#define DEVICESCREENWIDTH [[UIScreen mainScreen]bounds].size.width
-#define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
+  
 #import "LoginView.h"
 #import "Masonry.h"
 
@@ -166,7 +164,7 @@
 - (UILabel *)nameLab{
     if (!_nameLab){
         _nameLab = [[UILabel alloc]init];
-        _nameLab.text = @"Sung";
+        _nameLab.text = @"宋嘉明";
         _nameLab.textAlignment = NSTextAlignmentCenter;
         _nameLab.font = [UIFont boldSystemFontOfSize:23];
         _nameLab.textColor = [UIColor colorNamed:@"0_0_0&154_153_154"];

@@ -57,6 +57,7 @@
 		B56D3F4C27C463AC0063A723 /* NSDate+Day.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Day.m"; sourceTree = "<group>"; };
 		B56D3F4F27C4645D0063A723 /* BannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerModel.h; sourceTree = "<group>"; };
 		B56D3F5027C4645D0063A723 /* BannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerModel.m; sourceTree = "<group>"; };
+		B56D3F5327C489F10063A723 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		B593029A27BCB65F00ADE26D /* UILabel+AutoHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+AutoHeight.h"; sourceTree = "<group>"; };
 		B593029B27BCB65F00ADE26D /* UILabel+AutoHeight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AutoHeight.m"; sourceTree = "<group>"; };
 		B593029D27BD2D9B00ADE26D /* NSTimer+Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Time.h"; sourceTree = "<group>"; };
@@ -182,6 +183,8 @@
 			children = (
 				B593029A27BCB65F00ADE26D /* UILabel+AutoHeight.h */,
 				B593029B27BCB65F00ADE26D /* UILabel+AutoHeight.m */,
+				B56D3F4B27C463AC0063A723 /* NSDate+Day.h */,
+				B56D3F4C27C463AC0063A723 /* NSDate+Day.m */,
 				B593029D27BD2D9B00ADE26D /* NSTimer+Time.h */,
 				B593029E27BD2D9C00ADE26D /* NSTimer+Time.m */,
 				B59302CF27BF746100ADE26D /* NightAndSettingButton.h */,
@@ -274,8 +277,6 @@
 			children = (
 				B546DCF027B8EA2B00D60BF2 /* MainTableView.h */,
 				B546DCF127B8EA2B00D60BF2 /* MainTableView.m */,
-				B56D3F4B27C463AC0063A723 /* NSDate+Day.h */,
-				B56D3F4C27C463AC0063A723 /* NSDate+Day.m */,
 				B566DBE327B76AC40047AC4A /* Cell */,
 			);
 			path = MainTableView;
@@ -315,6 +316,7 @@
 			children = (
 				B59302C227BE7A0400ADE26D /* AppDelegate.h */,
 				B59302C327BE7A0400ADE26D /* AppDelegate.m */,
+				B56D3F5327C489F10063A723 /* PrefixHeader.pch */,
 				B5D1569827B633B300657E3A /* ZhiHuDaily */,
 				B5D1569727B633B300657E3A /* Products */,
 				D36769D9F94A4EBC2222C0EC /* Pods */,
@@ -660,6 +662,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MFF5WD4K94;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/songjiaming/Documents/GitHub/ZhiHuDaily/ZhiHuDaily/PrefixHeader.pch;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -688,6 +693,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MFF5WD4K94;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/songjiaming/Documents/GitHub/ZhiHuDaily/ZhiHuDaily/PrefixHeader.pch;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

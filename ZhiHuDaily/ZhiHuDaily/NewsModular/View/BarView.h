@@ -4,8 +4,6 @@
 //
 //  Created by 宋开开 on 2022/2/9.
 //新闻额外信息，新闻详情页的底部bar
-#define DEVICESCREENWIDTH [[UIScreen mainScreen]bounds].size.width
-#define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
 NS_ASSUME_NONNULL_BEGIN

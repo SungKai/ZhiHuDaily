@@ -7,10 +7,9 @@
 #import <Foundation/Foundation.h>
 #import <UIkit/UIkit.h>
 #import "EverydayNewsModel.h"
-
 #import "NewsCell.h"
 
-@interface EverydayNewsModel()<UITableViewDataSource>
+@interface EverydayNewsModel()
 
 @end
 @implementation EverydayNewsModel
@@ -22,11 +21,11 @@
     return self;
 }
 #pragma mark - 网络请求
-//请求Lastest数据
+//请求 Lastest数据,相当于刷新, 删除其他数据
 - (void)gainLatestData:(void(^)(void))reloadDataOfNewsCell{
     [DayModel getLatest:^(DayModel * _Nonnull everydayData) {
+        [self.everydayNews removeAllObjects];
         [self.everydayNews addObject:everydayData];
-        NSLog(@"oooooofsdasdfgfdgasdgsadao=======%@", self.everydayNews[0].top_stories[1].title);
         reloadDataOfNewsCell();
         }];
 }
@@ -36,23 +35,6 @@
         [self.everydayNews addObject:beforeDate];
         reloadBeforeDataOfNewsCell();
     }];
-}
-#pragma mark - <UITableViewDataSourse>
-//行数section
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.everydayNews.count;
-}
-//每行的cell个数
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return  self.everydayNews[section].stories.count;
-//    return self.everydayNews.count == section ? 6 : self.everydayNews[section].stories.count;
-}
-//每个cell
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (self.everydayNews.count == indexPath.section){
-        return [self.sourseNewsDelegate tableView:tableView SourseNewsForSourse:nil];
-    }
-    return [self.sourseNewsDelegate tableView:tableView SourseNewsForSourse:self.everydayNews[indexPath.section].stories[indexPath.row]];
 }
 
 

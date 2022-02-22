@@ -4,16 +4,12 @@
 //
 //  Created by 宋开开 on 2022/2/4.
 //
-//pch文件
-//偏好设置的宏定义
-#define USERDEFAULTS [NSUserDefaults standardUserDefaults]
-//屏幕的宽和长
-#define DEVICESCREENWIDTH [[UIScreen mainScreen]bounds].size.width
-#define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
+ 
 #import "TopView.h"
 #import "Masonry.h"
 #import "NSDate+Day.h"
 @implementation TopView
+//初始化方法
 - (instancetype)initWithTop{
     self = [super init];
     if (self){
@@ -31,11 +27,6 @@
         [self setPosition];
     }
     return self;
-}
-#pragma mark - 方法
-//单击TopView回到顶部
-- (void)upToTop{
-    [self.topDelegate topTap];
 }
 #pragma mark - 懒加载
 //dayLab
@@ -91,7 +82,11 @@
     }
     return _mainTitle;
 }
-
+#pragma mark - 方法
+//单击TopView回到顶部
+- (void)upToTop{
+    [self.topDelegate topTap];
+}
 //设置尺寸
 - (void)setPosition{
     self.frame = CGRectMake(0, 0, DEVICESCREENWIDTH, 85);

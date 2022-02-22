@@ -9,12 +9,22 @@
 #import "HomeViewController.h"
 #import "NewsViewController.h"
 #import "PersonViewController.h"
-@interface ManagerViewController () <HomeViewControllerDelegate>
+@interface ManagerViewController ()
 
 @end
 
 @implementation ManagerViewController
+//单例模式
++ (instancetype)share{
+    static ManagerViewController *instance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
 #pragma mark - <HomeViewControllerDelegate>
+
 //跳转到新闻详情页
 - (UIViewController *)deliverTheID:(NSString *)ID{
     NewsViewController *newsController = [[NewsViewController alloc]initWithID:ID];

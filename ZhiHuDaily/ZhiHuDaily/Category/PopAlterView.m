@@ -4,8 +4,7 @@
 //
 //  Created by 宋开开 on 2022/2/19.
 //
-#define DEVICESCREENWIDTH [[UIScreen mainScreen]bounds].size.width
-#define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
+  
 #import "PopAlterView.h"
 #import "Masonry.h"
 @interface PopAlterView()

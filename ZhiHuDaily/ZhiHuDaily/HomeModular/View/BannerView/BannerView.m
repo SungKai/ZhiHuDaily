@@ -4,8 +4,7 @@
 //
 //  Created by 宋开开 on 2022/2/14.
 //
-#define DEVICESCREENWIDTH [[UIScreen mainScreen]bounds].size.width
-#define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
+  
 #import "BannerView.h"
 #import "EverydayNewsModel.h"
 #import "Masonry.h"
@@ -20,37 +19,6 @@
 @property (nonatomic,strong) UIImageView *currentImageV;
 @end
 @implementation BannerView
-
-- (void)setIsScrolling:(BOOL)isScrolling{
-    _isScrolling = isScrolling;
-    if (!self.timer) {
-        return;
-    }
-    if (isScrolling) {
-        [self.timer end];
-        self.timer = nil;
-    }else{
-        
-        [NSTimer beginWithTimer:self.timer];
-        if (self.currentImageV) {
-            self.currentImageV.transform = CGAffineTransformMakeScale(1.0, 1.0);
-        }
-    }
-}
-
-- (void)setOffsetY:(CGFloat)offsetY{
-    if (self.currentImageV) {
-        if (offsetY >= 0) {
-            self.currentImageV.transform = CGAffineTransformMakeScale(1, 1);
-        }else {
-            float scale = fabs(offsetY)/200.0 + 1;
-            self.currentImageV.transform = CGAffineTransformMakeScale(scale, scale);
-        }
-        
-    }
-    
-    
-}
 //重写init方法
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
@@ -60,20 +28,16 @@
         [self addSubview:self.scrollView];
     }
     return self;
-
 }
-
 #pragma mark - 加载Banne 设置图片轮播
 - (void)setDataArray:(NSArray<BannerModel *> *)dataArray{
-    
     _dataArray = dataArray;
-    
     for (UIImageView *imageV in self.imageVArray) {
         [imageV removeFromSuperview];
         self.imageVArray = [NSMutableArray array];
     }
+    //取出BannerModel里面的数据遍历取出
     for (int i = 0; i < self.dataArray.count; i++){
-        
         //设置图片
         UIImageView * image = [[UIImageView alloc]init];
         image.frame = CGRectMake(DEVICESCREENWIDTH * i, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
@@ -105,7 +69,7 @@
     [self bringSubviewToFront:self.pageControl];
     if (!self.timer) {
         __weak typeof(self) weakSelf = self;
-        self.timer = [NSTimer timerWithTimeInterval:5.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        self.timer = [NSTimer timerWithTimeInterval:2.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
             if (weakSelf) {
                 [weakSelf nextPage];
             }
@@ -143,6 +107,35 @@
     hintLab.frame = CGRectMake(30, DEVICESCREENWIDTH - 45, DEVICESCREENWIDTH - 35 - 35, 18);
     return hintLab;
 }
+//判断是否正在滚动
+- (void)setIsScrolling:(BOOL)isScrolling{
+    _isScrolling = isScrolling;
+    //不加会异常：NStimer beginWithTimer
+    if (!self.timer) {
+        return;
+    }
+    if (isScrolling) {
+        [self.timer end];
+        self.timer = nil;
+    }else{
+        //缩放效果
+        [NSTimer beginWithTimer:self.timer];
+        if (self.currentImageV) {
+            self.currentImageV.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        }
+    }
+}
+//设置缩放效果
+- (void)setOffsetY:(CGFloat)offsetY{
+    if (self.currentImageV) {
+        if (offsetY >= 0) {
+            self.currentImageV.transform = CGAffineTransformMakeScale(1, 1);
+        }else {
+            float scale = fabs(offsetY)/200.0 + 1;
+            self.currentImageV.transform = CGAffineTransformMakeScale(scale, scale);
+        }
+    }
+}
 #pragma mark - 懒加载
 - (UIScrollView *)scrollView{
     if (!_scrollView){
@@ -168,12 +161,10 @@
     }
     return _pageControl;
 }
-
-
 #pragma mark - 轮播方法
 //每次循环的事件
 - (void)nextPage{
-    if (self.dataArray.count==0 || self.imageVArray.count==0) {
+    if (self.dataArray.count == 0 || self.imageVArray.count == 0) {
         return;
     }
     NSInteger page = self.pageControl.currentPage + 1;
@@ -183,9 +174,7 @@
     [self.scrollView setContentOffset:CGPointMake(page * DEVICESCREENWIDTH, 0) animated:YES];
     self.pageControl.currentPage = page;
     self.currentImageV = self.imageVArray[page];
-    
 }
-
 
 #pragma mark - <UIScrollViewDelegate>
 //监听滚动状态来使pageControl也作出相应变化
@@ -208,6 +197,5 @@
         [self.timer end];
         self.timer = nil;
     }
-    NSLog(@">>>> %@ dealloc", NSStringFromClass([self class]));
 }
 @end

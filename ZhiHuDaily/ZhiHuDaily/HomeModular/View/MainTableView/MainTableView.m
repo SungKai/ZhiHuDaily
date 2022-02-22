@@ -11,7 +11,7 @@
 #import "DateHeaderView.h"
 #import "NewsCell.h"
 #import "HomeViewController.h"
-@interface MainTableView ()<UITableViewDelegate, UIScrollViewDelegate>
+@interface MainTableView ()<UITableViewDelegate, UITableViewDataSource,UIScrollViewDelegate>
 
 @end
 @implementation MainTableView
@@ -21,26 +21,35 @@
         self.delegate = self;
         self.showsVerticalScrollIndicator = NO;
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
+        self.everydayNews = [NSMutableArray array];
+        self.dataSource = self;
+        self.delegate = self;
     }
     return self;
 }
-#pragma mark - 懒加载
-- (NSString *)date{
-    if (!_date){
-        _date = [NSString string];
-    }
-    return _date;
+
+
+#pragma mark - <UITableViewDataSourse>
+//行数section
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.everydayNews.count;
 }
-#pragma mark - 方法
-//创建一个cell
-- (NewsCell *)creatFromTableView:(UITableView *)tableView{
-    return [NewsCell creatCellDefault:tableView];
+//每行的cell个数
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return  self.everydayNews[section].stories.count;
 }
+//每个cell
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NewsCell *newsCell = [NewsCell creatCellDefault:tableView];
+    DataModel *dataModel = self.everydayNews[indexPath.section].stories[indexPath.row];
+    return  [newsCell cellWithInformation:newsCell WithTitleText:dataModel.title WithHintText:dataModel.hint WithImageURL:dataModel.imageURL];
+}
+
 #pragma mark - <UITableViewDelegate>
 //每当拉到每个section的FooterView就加载Before数据
 - (void)tableView:(UITableView *)tableView
 willDisplayFooterView:(nonnull UIView *)view forSection:(NSInteger)section{
-    if ([self.mainDelegate everydayNewsCount] == section + 1){
+    if (self.everydayNews.count == section + 1){
         [self.mainDelegate nextSectionBlock:section];
     }
 }
@@ -53,11 +62,11 @@ willDisplayFooterView:(nonnull UIView *)view forSection:(NSInteger)section{
 }
 //设置DateView为TableView的headerView
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    NSString *date = [self.mainDelegate gainDate:section];
+    NSString *date = self.everydayNews[section].date;
     NSInteger month = [[date substringWithRange:NSMakeRange(4, 2)] integerValue];
     NSInteger day = [[date substringFromIndex:6] integerValue];
     DateHeaderView *dateHeaderView = [[DateHeaderView alloc]initWithDateHeaderViewWithDate:[NSString stringWithFormat:@"%ld月%ld日", month, day]];
-        return dateHeaderView;
+    return dateHeaderView;
 }
 //设置footerView为高度极小的一个View
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -74,7 +83,7 @@ willDisplayFooterView:(nonnull UIView *)view forSection:(NSInteger)section{
 }
 //每一个cell的高度为105
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-        return 105;
+    return 105;
 }
 //单击跳转新闻详情页
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -85,6 +94,7 @@ willDisplayFooterView:(nonnull UIView *)view forSection:(NSInteger)section{
 
 //即将开始拖拽时停止计时器
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+//    这个方法实现了，那么就去调用，防止出现异常
     if ([self.mainDelegate respondsToSelector:@selector(scrollViewWithIsScrolling:offsetY:)]) {
         [self.mainDelegate scrollViewWithIsScrolling:YES offsetY:0];
     }
@@ -98,9 +108,8 @@ willDisplayFooterView:(nonnull UIView *)view forSection:(NSInteger)section{
 }
 #pragma mark - 滚动放大
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-   
-//    if ([self.mainDelegate respondsToSelector:@selector(scrollViewWithIsScrolling:offsetY:)]) {
+    if ([self.mainDelegate respondsToSelector:@selector(scrollViewWithIsScrolling:offsetY:)]) {
         [self.mainDelegate scrollViewWithIsScrolling:YES offsetY:scrollView.contentOffset.y];
-//    }
+    }
 }
 @end
