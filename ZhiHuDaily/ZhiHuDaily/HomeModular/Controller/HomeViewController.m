@@ -37,13 +37,11 @@
     //登陆后再次启动会刷新头像
     [self.topView reloadData];
     [self.view addSubview:self.mainTableView];
-    
     //下拉刷新
     UIRefreshControl *control = [[UIRefreshControl alloc]init];
     [control addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
     self.mainTableView.refreshControl = control;
     [self loadNewData];
-    
 }
 //刷新，使登陆或退出后点击返回主界面时TopView的头像作出对应变化
 - (void)viewWillAppear:(BOOL)animated{
@@ -98,7 +96,6 @@
         NSMutableArray<BannerModel *> *bannerModelArray = [NSMutableArray array];
         for (int i = 0; i < weakSelf.everydayModel.everydayNews[0].top_stories.count; i++) {
             DataModel *dataModel = weakSelf.everydayModel.everydayNews[0].top_stories[i];
-            //
             BannerModel *bannerModel =[[BannerModel alloc]initWithImage:dataModel.image title:dataModel.title hint:dataModel.hint ID:dataModel.ID];
             [bannerModelArray addObject:bannerModel];
         }
@@ -141,7 +138,7 @@
 - (void)loginView{
     [self.navigationController pushViewController:[self.homeDelegate jumpToLogin] animated:YES];
 }
-//点击头像进入个人登陆页
+
 #pragma mark - <MainTableDelegate>
 //点击cell,把indexPath传给HomeViewController来进行页面跳转
 - (void)gainIndexPath:(NSIndexPath *)indexPath{
@@ -149,6 +146,7 @@
 }
 //当下滑到每一组最后一个cell时，调用此方法来网络请求前一天的数据
 - (void)nextSectionBlock:(NSInteger)section{
+    //存在循环引用
     __weak typeof(self) weakSelf = self;
     [self.everydayModel gainBeforeDataAndDate:self.everydayModel.everydayNews.lastObject.date And:^{
         weakSelf.mainTableView.everydayNews = weakSelf.everydayModel.everydayNews;
@@ -159,6 +157,4 @@
 - (NSString *)gainDate:(NSInteger)section{
     return self.everydayModel.everydayNews[section].date;
 }
-
-
 @end

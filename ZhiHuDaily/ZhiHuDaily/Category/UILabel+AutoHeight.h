@@ -4,7 +4,7 @@
 //
 //  Created by 宋开开 on 2022/2/16.
 //
-/*此分类为UILabel添加了一个能够根据文字来确定该UILabel的Frame，
+/*此分类为UILabel添加了一个能够根据文本内容来确定该UILabel的Frame，
  具有屏幕适配功能
  */
 #import <UIKit/UIKit.h>
