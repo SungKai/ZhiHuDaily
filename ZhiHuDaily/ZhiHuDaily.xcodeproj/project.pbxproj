@@ -11,6 +11,8 @@
 		B546DCF227B8EA2B00D60BF2 /* MainTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B546DCF127B8EA2B00D60BF2 /* MainTableView.m */; };
 		B546DCF527BAAA8A00D60BF2 /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B546DCF427BAAA8A00D60BF2 /* BannerView.m */; };
 		B546DCFB27BB7CC900D60BF2 /* DateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B546DCF927BB7CC900D60BF2 /* DateHeaderView.m */; };
+		B56D3F4D27C463AC0063A723 /* NSDate+Day.m in Sources */ = {isa = PBXBuildFile; fileRef = B56D3F4C27C463AC0063A723 /* NSDate+Day.m */; };
+		B56D3F5127C4645D0063A723 /* BannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B56D3F5027C4645D0063A723 /* BannerModel.m */; };
 		B593029C27BCB65F00ADE26D /* UILabel+AutoHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = B593029B27BCB65F00ADE26D /* UILabel+AutoHeight.m */; };
 		B593029F27BD2D9C00ADE26D /* NSTimer+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = B593029E27BD2D9C00ADE26D /* NSTimer+Time.m */; };
 		B59302A727BD58F600ADE26D /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59302A627BD58F600ADE26D /* NewsViewController.m */; };
@@ -51,6 +53,10 @@
 		B546DCF427BAAA8A00D60BF2 /* BannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerView.m; sourceTree = "<group>"; };
 		B546DCF927BB7CC900D60BF2 /* DateHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateHeaderView.m; sourceTree = "<group>"; };
 		B546DCFA27BB7CC900D60BF2 /* DateHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateHeaderView.h; sourceTree = "<group>"; };
+		B56D3F4B27C463AC0063A723 /* NSDate+Day.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Day.h"; sourceTree = "<group>"; };
+		B56D3F4C27C463AC0063A723 /* NSDate+Day.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Day.m"; sourceTree = "<group>"; };
+		B56D3F4F27C4645D0063A723 /* BannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerModel.h; sourceTree = "<group>"; };
+		B56D3F5027C4645D0063A723 /* BannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerModel.m; sourceTree = "<group>"; };
 		B593029A27BCB65F00ADE26D /* UILabel+AutoHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+AutoHeight.h"; sourceTree = "<group>"; };
 		B593029B27BCB65F00ADE26D /* UILabel+AutoHeight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AutoHeight.m"; sourceTree = "<group>"; };
 		B593029D27BD2D9B00ADE26D /* NSTimer+Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Time.h"; sourceTree = "<group>"; };
@@ -268,6 +274,8 @@
 			children = (
 				B546DCF027B8EA2B00D60BF2 /* MainTableView.h */,
 				B546DCF127B8EA2B00D60BF2 /* MainTableView.m */,
+				B56D3F4B27C463AC0063A723 /* NSDate+Day.h */,
+				B56D3F4C27C463AC0063A723 /* NSDate+Day.m */,
 				B566DBE327B76AC40047AC4A /* Cell */,
 			);
 			path = MainTableView;
@@ -278,6 +286,8 @@
 			children = (
 				B546DCF327BAAA8A00D60BF2 /* BannerView.h */,
 				B546DCF427BAAA8A00D60BF2 /* BannerView.m */,
+				B56D3F4F27C4645D0063A723 /* BannerModel.h */,
+				B56D3F5027C4645D0063A723 /* BannerModel.m */,
 			);
 			path = BannerView;
 			sourceTree = "<group>";
@@ -487,6 +497,8 @@
 				B59302DD27C136E300ADE26D /* ArticleModel.m in Sources */,
 				B59302CB27BF73AB00ADE26D /* PersonViewController.m in Sources */,
 				B59302D127BF746100ADE26D /* NightAndSettingButton.m in Sources */,
+				B56D3F5127C4645D0063A723 /* BannerModel.m in Sources */,
+				B56D3F4D27C463AC0063A723 /* NSDate+Day.m in Sources */,
 				B546DCFB27BB7CC900D60BF2 /* DateHeaderView.m in Sources */,
 				B5D156D727B6359800657E3A /* EverydayNewsModel.m in Sources */,
 				B59302DA27C0E55200ADE26D /* PopAlterView.m in Sources */,

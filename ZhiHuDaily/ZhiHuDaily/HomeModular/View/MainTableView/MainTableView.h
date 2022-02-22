@@ -14,8 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 //代理
 @protocol MainTableDelegate <NSObject>
 @required
-//banner滑动放大
-- (void)bannerOffset:(CGPoint)offset;
 //数据传递，当滑到footerView的时候去触发加载Before数据
 - (void)nextSectionBlock:(NSInteger)section;
 //得到每日日期
@@ -24,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)gainIndexPath:(NSIndexPath *)indexPath;
 //让HomeViewController传递一个everydayModel.everydayNews给MainTableView，来在请求Before数据的时候判断，防止刷新率过高
 - (NSInteger)everydayNewsCount;
+//传递正在下滑的信息
+- (void)scrollViewWithIsScrolling:(BOOL)isScrolling offsetY:(CGFloat)offsetY;
 @end
 
 @interface MainTableView : UITableView

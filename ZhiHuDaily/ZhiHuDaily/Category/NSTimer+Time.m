@@ -17,6 +17,7 @@
 /**创建后立刻开始执行*/
 + (NSTimer *)beginWithTimer:(NSTimer *)timer {
     [NSRunLoop.currentRunLoop addTimer:timer forMode:NSRunLoopCommonModes];
+    
     return timer;
 }
 

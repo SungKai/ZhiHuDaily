@@ -82,14 +82,25 @@ willDisplayFooterView:(nonnull UIView *)view forSection:(NSInteger)section{
     cell.title.textColor = [UIColor colorNamed:@"152_152_152&&101_101_101"];
     [self.mainDelegate gainIndexPath:indexPath];
 }
+
+//即将开始拖拽时停止计时器
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    if ([self.mainDelegate respondsToSelector:@selector(scrollViewWithIsScrolling:offsetY:)]) {
+        [self.mainDelegate scrollViewWithIsScrolling:YES offsetY:0];
+    }
+}
+
+//已经停止拖拽时开启计时器
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    if ([self.mainDelegate respondsToSelector:@selector(scrollViewWithIsScrolling:offsetY:)]) {
+        [self.mainDelegate scrollViewWithIsScrolling:NO offsetY:0];
+    }
+}
 #pragma mark - 滚动放大
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-//    //原理：获得scrollView
-//    if (scrollView.contentOffset.y <= 0) {
-//    NSLog(@"\n\t- %@", NSStringFromCGPoint(scrollView.contentOffset));
-//        NSLog(@"vffffffffffff        %f", scrollView.contentOffset.y);
-//        //把scrollView.contentOffset传到
-//        [self.mainDelegate bannerOffset:scrollView.contentOffset];
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+   
+//    if ([self.mainDelegate respondsToSelector:@selector(scrollViewWithIsScrolling:offsetY:)]) {
+        [self.mainDelegate scrollViewWithIsScrolling:YES offsetY:scrollView.contentOffset.y];
 //    }
-//}
+}
 @end

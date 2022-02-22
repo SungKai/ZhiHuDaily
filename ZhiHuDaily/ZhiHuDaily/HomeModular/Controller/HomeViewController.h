@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeViewController : UIViewController
 //代理
-@property (nonatomic, weak) UIViewController <HomeViewControllerDelegate> *homeDelegate;
+@property (nonatomic, weak)id<HomeViewControllerDelegate> homeDelegate;
 //当下滑到每一组最后一个cell时，调用此方法来网络请求前一天的数据
 - (void)nextSection:(NSInteger)section;
 @end

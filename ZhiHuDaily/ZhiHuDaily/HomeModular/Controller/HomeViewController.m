@@ -37,18 +37,12 @@
     //登陆后再次启动会刷新头像
     [self.topView reloadData];
     [self.view addSubview:self.mainTableView];
-    self.mainTableView.tableHeaderView = self.bannerView;
-    [self.everydayModel gainLatestData:^{
-        NSLog(@"latest             self.mainTableView reloadData");
-        [self.mainTableView reloadData];
-        self.bannerView.dataArray = self.everydayModel.everydayNews[0].top_stories;
-        NSLog(@"aaaaaaaa        %@", self.everydayModel.everydayNews[0].top_stories[1].title);
-        [self.bannerView reloadBanner];
-    }];
+    
     //下拉刷新
     UIRefreshControl *control = [[UIRefreshControl alloc]init];
     [control addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
     self.mainTableView.refreshControl = control;
+    [self loadNewData];
     
 }
 //刷新，使登陆或退出后点击返回主界面时TopView的头像作出对应变
@@ -77,15 +71,15 @@
         _mainTableView.dataSource = self.everydayModel;
         _mainTableView.mainDelegate = self;
         _mainTableView.backgroundColor = [UIColor colorNamed:@"255_255_255&26_26_26"];
+        _mainTableView.tableHeaderView = self.bannerView;
+        
     }
     return _mainTableView;
 }
 - (BannerView *)bannerView{
     if (!_bannerView){
         _bannerView = [[BannerView alloc]initWithFrame:CGRectMake(0, 0, DEVICESCREENWIDTH, DEVICESCREENWIDTH)];
-        _bannerView.dataSource = self.everydayModel;
         _bannerView.bannerDelegate = self;
-        _bannerView.scrollView.delegate = self;
     }
     return _bannerView;
 }
@@ -93,14 +87,40 @@
 //下拉刷新
 - (void)refreshTableView{
     //延迟1s执行，否则正在刷新时新cell已经显示
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        //刷新后新增cell
-        [self.mainTableView reloadData];
+    [self loadNewData];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        //刷新后新增cell
+//        [self.mainTableView reloadData];
+//        //判断是否正在下拉刷新状态，若是 停止刷新
+//        if ([self.mainTableView.refreshControl isRefreshing]) {
+//            [self.mainTableView.refreshControl endRefreshing];
+//        }
+//    });
+}
+
+//加载最新数据
+//刷新单独处理成一个方法，扩展性
+- (void)loadNewData{
+    __weak typeof(self) weakSelf = self;
+    [self.everydayModel gainLatestData:^{
         //判断是否正在下拉刷新状态，若是 停止刷新
         if ([self.mainTableView.refreshControl isRefreshing]) {
             [self.mainTableView.refreshControl endRefreshing];
         }
-    });
+        NSLog(@"latest             self.mainTableView reloadData");
+        
+        NSMutableArray<BannerModel *> *bannerModelArray = [NSMutableArray array];
+        for (int i = 0; i<weakSelf.everydayModel.everydayNews[0].top_stories.count; i++) {
+            DataModel *dataModel = weakSelf.everydayModel.everydayNews[0].top_stories[i];
+            BannerModel *bannerModel =[[BannerModel alloc]initWithImage:dataModel.image title:dataModel.title hint:dataModel.hint ID:dataModel.ID];
+            [bannerModelArray addObject:bannerModel];
+        }
+        weakSelf.bannerView.dataArray = bannerModelArray;
+        NSLog(@"aaaaaaaa        %@", weakSelf.everydayModel.everydayNews[0].top_stories[1].title);
+        //刷新cell
+        [weakSelf.mainTableView reloadData];
+        
+    }];
 }
 //当下滑到每一组最后一个cell时，调用此方法来网络请求前一天的数据
 - (void)nextSection:(NSInteger)section{
@@ -131,26 +151,11 @@
     }
 }
 
-#pragma mark - <UIScrollViewDelegate>
-//监听滚动状态来使pageControl也作出相应变化
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    //计算页码(四舍五入）
-    int page = (int)(scrollView.contentOffset.x / DEVICESCREENWIDTH + 0.5);
-    self.bannerView.pageControl.currentPage = page;
-    //(当只有一页时隐藏）
-    self.bannerView.pageControl.hidesForSinglePage = YES;
+- (void)scrollViewWithIsScrolling:(BOOL)isScrolling offsetY:(CGFloat)offsetY{
+    self.bannerView.isScrolling = isScrolling;
+    self.bannerView.offsetY = offsetY;
 }
 
-//即将开始拖拽时停止计时器
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    [self.bannerView.timer end];
-    self.bannerView.timer = nil;
-}
-
-//已经停止拖拽时开启计时器
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    [NSTimer beginWithTimer:self.bannerView.timer];
-}
 #pragma mark - <BannerDelegate>
 //界面跳转:Banne跳转新闻详情页
 - (void)deliverBannerID:(NSString *)ID{
@@ -187,22 +192,5 @@
     NSLog(@"uuuuuuuuuuu uu u        %ld", self.everydayModel.everydayNews.count);
     return self.everydayModel.everydayNews.count;
 }
-//banner拉伸放大功能
-- (void)bannerOffset:(CGPoint)offset{
-//    BannerView *banner = self.bannerView;
-//    CGRect rect = self.bannerView.scrollView.frame;
-//    rect.origin.y = offset.y;
-//    rect.origin.x = offset.x;
-//    NSLog(@"ppppppppp           %f", rect.origin.y);
-//    rect.size.height = DEVICESCREENWIDTH - offset.y;
-//    NSLog(@"sssssssss           %f", rect.size.height);
-//
-////    self.bannerView.frame = rect;
-//    self.bannerView.scrollView.frame = rect;
-//    self.mainTableView.tableHeaderView.frame = rect;
-//    self.bannerView.image.frame = rect;
-//    self.bannerView.image.frame = self.bannerView.scrollView.frame;
-}
-
 
 @end

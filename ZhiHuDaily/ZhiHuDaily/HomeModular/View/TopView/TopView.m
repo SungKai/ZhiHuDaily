@@ -4,6 +4,7 @@
 //
 //  Created by 宋开开 on 2022/2/4.
 //
+//pch文件
 //偏好设置的宏定义
 #define USERDEFAULTS [NSUserDefaults standardUserDefaults]
 //屏幕的宽和长
@@ -11,6 +12,7 @@
 #define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
 #import "TopView.h"
 #import "Masonry.h"
+#import "NSDate+Day.h"
 @implementation TopView
 - (instancetype)initWithTop{
     self = [super init];
@@ -43,12 +45,7 @@
         _dayLab.textAlignment = NSTextAlignmentCenter;
         _dayLab.font = [UIFont boldSystemFontOfSize:20];
         _dayLab.textColor = [UIColor colorNamed:@"68_68_68&129_129_129"];
-        //计算时间
-        NSDate *date =[NSDate date];
-        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-        formatter.dateFormat = @"d";
-        NSString *day = [formatter stringFromDate:date];
-        _dayLab.text = day;
+        _dayLab.text = [[NSDate today]day];
     }
     return _dayLab;
 }
@@ -59,12 +56,8 @@
         _monthLab.font = [UIFont systemFontOfSize:13];
         _monthLab.textAlignment = NSTextAlignmentCenter;
         _monthLab.textColor = [UIColor colorNamed:@"68_68_68&129_129_129"];
-        //计算时间
-        NSDate *date =[NSDate date];
-        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-        formatter.dateFormat = @"M";
-        NSString *month = [formatter stringFromDate:date];
-        _monthLab.text = [self transformMonth:month];
+        //计算时间  封装
+        _monthLab.text = [[NSDate today]transformChinese];
     }
     return _monthLab;
 }
@@ -98,14 +91,7 @@
     }
     return _mainTitle;
 }
-//把月份的数字转换为文字
-- (NSString *)transformMonth:(NSString *)month{
-    //设置数字数组
-    NSArray *numberArray = @[@"1", @"2",@"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12"];
-    NSArray *stringArray = @[@"一月", @"二月",@"三月", @"四月", @"五月", @"六月", @"七月", @"八月", @"九月", @"十月", @"十一月", @"十二月"];
-    NSDictionary *dict = [NSDictionary dictionaryWithObjects:stringArray forKeys:numberArray];
-    return [dict objectForKey:month];
-}
+
 //设置尺寸
 - (void)setPosition{
     self.frame = CGRectMake(0, 0, DEVICESCREENWIDTH, 85);

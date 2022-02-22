@@ -28,10 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithTop;
 //设置尺寸
 - (void)setPosition;
-//计算时间
-- (void)calculateTime;
-//把月份的数字转换为文字
-- (void)transformMonth;
 //登陆后再加载,保存偏好设置
 - (void)reloadData;
 @end

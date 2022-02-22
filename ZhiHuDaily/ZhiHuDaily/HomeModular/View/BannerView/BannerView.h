@@ -6,7 +6,7 @@
 //
 //此类为Banner作为TableView的headerView
 #import <UIKit/UIKit.h>
-#import "DataModel.h"
+#import "BannerModel.h"
 NS_ASSUME_NONNULL_BEGIN
 //代理
 @protocol BannerDelegate <NSObject>
@@ -14,15 +14,16 @@ NS_ASSUME_NONNULL_BEGIN
 //banner新闻跳转
 - (void)deliverBannerID:(NSString *)ID;
 @end
-@interface BannerView : UITableView <UIGestureRecognizerDelegate>
+
+
+@interface BannerView : UIView <UIGestureRecognizerDelegate>
 //代理
 @property (nonatomic, weak)id <BannerDelegate> bannerDelegate;
-@property (nonatomic, strong) NSArray<DataModel *> *dataArray;
-@property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) UIPageControl *pageControl;
-@property (nonatomic, strong, nullable) NSTimer *timer;
-@property (nonatomic, strong) UIImageView *image;
-- (void)reloadBanner;
+
+@property (nonatomic, strong) NSArray<BannerModel *> *dataArray;
+
+@property (nonatomic,assign) BOOL isScrolling;
+@property (nonatomic,assign) CGFloat offsetY;
 @end
 
 NS_ASSUME_NONNULL_END
