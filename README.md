@@ -22,7 +22,7 @@
 
   
 
-  ![banner](/Users/songjiaming/Documents/GitHub/ZhiHuDaily/banner.gif)
+  ![banner](banner.gif)
 
 - 可无限上滑加载过往新闻
 
