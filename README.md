@@ -20,49 +20,49 @@
 
 - 可展示自动播放的banner，pageControl可以随着图片的滑动更改当前颜色
 
-  <img src="/Users/songjiaming/.Trash/Typora/ZhiHuReadMe/banner.gif" alt="banner"  /> 
-
   
+
+  ![banner](/Users/songjiaming/Documents/GitHub/ZhiHuDaily/banner.gif)
 
 - 可无限上滑加载过往新闻
 
-  <img src="/Users/songjiaming/.Trash/Typora/ZhiHuReadMe/down.gif" alt="down"  /> 
-
-  
+  ![down](/Users/songjiaming/Documents/GitHub/ZhiHuDaily/down.gif)
 
 - 在同一个section请求完成，来不及加载的cell有无数据状态
 
-  <img src="/Users/songjiaming/.Trash/Typora/ZhiHuReadMe/cellDefult.gif" alt="cellDefult"  />b 
-
-  
+  ![cellDefult](/Users/songjiaming/Documents/GitHub/ZhiHuDaily/cellDefult.gif)
 
 - 点击banner或者cell可以实现新闻详情界面跳转，返回主界面后会标题会变灰
 
-   <img src="/Users/songjiaming/.Trash/Typora/ZhiHuReadMe/cellClick.gif" alt="cellClick"  />
-
-  
+     ![cellClick](/Users/songjiaming/Documents/GitHub/ZhiHuDaily/cellClick.gif)
 
 - 点击在新闻详情页的底部的点赞和收藏按钮可出现数字变化和提示框（会自动消失）
 
-  <img src="/Users/songjiaming/.Trash/Typora/ZhiHuReadMe/likeBtn.gif" alt="likeBtn"  /> 
-
-  
+  ![likeBtn](/Users/songjiaming/Documents/GitHub/ZhiHuDaily/likeBtn.gif)
 
 - 屏幕适配
 
-  ​                     				iPhone8:																						iPhone 13 Pro Max:
+-   iPhone8:
 
-  <img src="/Users/songjiaming/.Trash/Typora/ZhiHuReadMe/ipone8.png" alt="ipone8" style="zoom: 50%;" /> <img src="/Users/songjiaming/.Trash/Typora/ZhiHuReadMe/ipone13ProMax.png" alt="ipone13ProMax" style="zoom: 33%;" />
+  ​					<img src="/Users/songjiaming/Documents/GitHub/ZhiHuDaily/ipone8.png" alt="ipone8" style="zoom:33%;" />							          
+
+  ​							   
+
+  iPhone 13 Pro Max:
+
+  <img src="/Users/songjiaming/Documents/GitHub/ZhiHuDaily/ipone13ProMax.png" alt="ipone13ProMax" style="zoom: 25%;" />
+
+  
+
+
 
 - 黑夜模式
 
-  <img src="/Users/songjiaming/.Trash/Typora/ZhiHuReadMe/dark.png" alt="dark" style="zoom: 50%;" /> 
-
-
-
+  <img src="/Users/songjiaming/Documents/GitHub/ZhiHuDaily/dark.png" alt="dark" style="zoom: 33%;" /> 
+  
 - 跳转到用户页与伪登陆
 
-  ![login](/Users/songjiaming/.Trash/Typora/ZhiHuReadMe/login.gif) 
+  ![login](/Users/songjiaming/Documents/GitHub/ZhiHuDaily/login.gif) 
 
 ## 2 构成模块
 
@@ -170,7 +170,7 @@
 
 - 不足：banner的拉伸比较奇怪
 
-  ![bannerPull](/Users/songjiaming/.Trash/Typora/ZhiHuReadMe/bannerPull.gif) 
+  ![bannerPull](/Users/songjiaming/Documents/GitHub/ZhiHuDaily/bannerPull.gif) 
 
 - 心得体会：这是第一次写一个比较完整的项目，去实现比较完整的功能，我个人认为这个项目很好，把大部分所学的知识都用上了，另外还给了我探索的空间，让更深一步的知道了理论与实践的天差地别，同样我自己也在一次次的重构与优化中看到过去不足的自己，从而静下心来去想我改怎么去写的更好，怎么样在已经实现了需求的情况下再去追求代码的可读性。
 
