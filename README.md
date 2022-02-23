@@ -129,7 +129,7 @@
 
 #### View：
 
-`BarView`：![bar](/Users/songjiaming/Documents/GitHub/ZhiHuDaily/bar.png)
+`BarView`：![bar](bar.png)
 
 新闻底部的bar，具有返回功能，评论数与点赞数均为网络请求得来的数据，按下点赞或收藏按钮均有相应按钮图案颜色的改变，以及自定义提示框弹出与自动消失
 
