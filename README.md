@@ -26,31 +26,31 @@
 
 - 可无限上滑加载过往新闻
 
-  ![down](/Users/songjiaming/Documents/GitHub/ZhiHuDaily/down.gif)
+  ![down](down.gif)
 
 - 在同一个section请求完成，来不及加载的cell有无数据状态
 
-  ![cellDefult](/Users/songjiaming/Documents/GitHub/ZhiHuDaily/cellDefult.gif)
+  ![cellDefult](cellDefult.gif)
 
 - 点击banner或者cell可以实现新闻详情界面跳转，返回主界面后会标题会变灰
 
-     ![cellClick](/Users/songjiaming/Documents/GitHub/ZhiHuDaily/cellClick.gif)
+     ![cellClick](cellClick.gif)
 
 - 点击在新闻详情页的底部的点赞和收藏按钮可出现数字变化和提示框（会自动消失）
 
-  ![likeBtn](/Users/songjiaming/Documents/GitHub/ZhiHuDaily/likeBtn.gif)
+  ![likeBtn](likeBtn.gif)
 
 - 屏幕适配
 
 -   iPhone8:
 
-  ​					<img src="/Users/songjiaming/Documents/GitHub/ZhiHuDaily/ipone8.png" alt="ipone8" style="zoom:33%;" />							          
+  ​					![](ipone8.png)							          
 
   ​							   
 
   iPhone 13 Pro Max:
 
-  <img src="/Users/songjiaming/Documents/GitHub/ZhiHuDaily/ipone13ProMax.png" alt="ipone13ProMax" style="zoom: 25%;" />
+  ![](ipone13ProMax.png)
 
   
 
@@ -58,11 +58,13 @@
 
 - 黑夜模式
 
-  <img src="/Users/songjiaming/Documents/GitHub/ZhiHuDaily/dark.png" alt="dark" style="zoom: 33%;" /> 
+  ![](dark.png) 
   
 - 跳转到用户页与伪登陆
 
-  ![login](/Users/songjiaming/Documents/GitHub/ZhiHuDaily/login.gif) 
+  ![login](login.gif) 
+  
+   
 
 ## 2 构成模块
 
@@ -170,7 +172,7 @@
 
 - 不足：banner的拉伸比较奇怪
 
-  ![bannerPull](/Users/songjiaming/Documents/GitHub/ZhiHuDaily/bannerPull.gif) 
+  ![bannerPull](bannerPull.gif) 
 
 - 心得体会：这是第一次写一个比较完整的项目，去实现比较完整的功能，我个人认为这个项目很好，把大部分所学的知识都用上了，另外还给了我探索的空间，让更深一步的知道了理论与实践的天差地别，同样我自己也在一次次的重构与优化中看到过去不足的自己，从而静下心来去想我改怎么去写的更好，怎么样在已经实现了需求的情况下再去追求代码的可读性。
 
