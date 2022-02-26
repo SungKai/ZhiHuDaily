@@ -8,6 +8,7 @@
 #import "TopView.h"
 #import "Masonry.h"
 #import "NSDate+Day.h"
+#import "Header.h"
 @implementation TopView
 //初始化方法
 - (instancetype)initWithTop{

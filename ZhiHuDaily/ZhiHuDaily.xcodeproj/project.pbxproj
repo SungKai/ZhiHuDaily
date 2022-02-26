@@ -44,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1456FA6F27CA5D570021C45E /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		15129D0FBE12231B4447CADE /* Pods_ZhiHuDaily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhiHuDaily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68E1C1A183EB5134233405C4 /* Pods-ZhiHuDaily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuDaily.release.xcconfig"; path = "Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily.release.xcconfig"; sourceTree = "<group>"; };
 		8B8B83337AF0306C4F10075F /* Pods-ZhiHuDaily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuDaily.debug.xcconfig"; path = "Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily.debug.xcconfig"; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		B56D3F4C27C463AC0063A723 /* NSDate+Day.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Day.m"; sourceTree = "<group>"; };
 		B56D3F4F27C4645D0063A723 /* BannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerModel.h; sourceTree = "<group>"; };
 		B56D3F5027C4645D0063A723 /* BannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerModel.m; sourceTree = "<group>"; };
-		B56D3F5327C489F10063A723 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		B593029A27BCB65F00ADE26D /* UILabel+AutoHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+AutoHeight.h"; sourceTree = "<group>"; };
 		B593029B27BCB65F00ADE26D /* UILabel+AutoHeight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AutoHeight.m"; sourceTree = "<group>"; };
 		B593029D27BD2D9B00ADE26D /* NSTimer+Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Time.h"; sourceTree = "<group>"; };
@@ -314,9 +314,6 @@
 		B5D1568D27B633B300657E3A = {
 			isa = PBXGroup;
 			children = (
-				B59302C227BE7A0400ADE26D /* AppDelegate.h */,
-				B59302C327BE7A0400ADE26D /* AppDelegate.m */,
-				B56D3F5327C489F10063A723 /* PrefixHeader.pch */,
 				B5D1569827B633B300657E3A /* ZhiHuDaily */,
 				B5D1569727B633B300657E3A /* Products */,
 				D36769D9F94A4EBC2222C0EC /* Pods */,
@@ -335,6 +332,9 @@
 		B5D1569827B633B300657E3A /* ZhiHuDaily */ = {
 			isa = PBXGroup;
 			children = (
+				B59302C227BE7A0400ADE26D /* AppDelegate.h */,
+				B59302C327BE7A0400ADE26D /* AppDelegate.m */,
+				1456FA6F27CA5D570021C45E /* Header.h */,
 				B59302BA27BE299000ADE26D /* ControllerManager */,
 				B59302A027BD565900ADE26D /* HomeModular */,
 				B59302A427BD57D100ADE26D /* NewsModular */,
@@ -664,7 +664,6 @@
 				DEVELOPMENT_TEAM = MFF5WD4K94;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/songjiaming/Documents/GitHub/ZhiHuDaily/ZhiHuDaily/PrefixHeader.pch;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -695,7 +694,6 @@
 				DEVELOPMENT_TEAM = MFF5WD4K94;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/songjiaming/Documents/GitHub/ZhiHuDaily/ZhiHuDaily/PrefixHeader.pch;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

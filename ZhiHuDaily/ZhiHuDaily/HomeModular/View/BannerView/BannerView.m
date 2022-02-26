@@ -11,6 +11,7 @@
 #import "UILabel+AutoHeight.h"
 #import "NSTimer+Time.h"
 #import <UIImageView+AFNetworking.h>
+#import "Header.h"
 @interface BannerView()<UIScrollViewDelegate>
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;

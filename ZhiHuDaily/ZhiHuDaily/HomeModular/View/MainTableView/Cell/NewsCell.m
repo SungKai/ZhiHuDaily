@@ -10,6 +10,7 @@
 #import <UIImageView+AFNetworking.h>
 #import "UILabel+AutoHeight.h"
 #import "HomeViewController.h"
+#import "Header.h"
 @implementation NewsCell
 //初始化
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
