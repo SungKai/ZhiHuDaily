@@ -4,8 +4,7 @@
 //
 //  Created by 宋开开 on 2022/2/13.
 //
-#define DEVICESCREENWIDTH [[UIScreen mainScreen]bounds].size.width
-#define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
+
 #import "MainTableView.h"
 #import "EverydayNewsModel.h"
 #import "DateHeaderView.h"

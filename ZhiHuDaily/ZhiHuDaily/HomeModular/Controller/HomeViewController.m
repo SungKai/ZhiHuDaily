@@ -5,8 +5,6 @@
 //  Created by 宋开开 on 2022/2/2.
 //
 
-#define DEVICESCREENWIDTH [[UIScreen mainScreen]bounds].size.width
-#define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
 #import "HomeViewController.h"
 #import "TopView.h"
 #import "BannerView.h"

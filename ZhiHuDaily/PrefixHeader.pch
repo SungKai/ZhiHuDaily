@@ -13,7 +13,7 @@
 //屏幕的宽和长
 #define DEVICESCREENWIDTH [[UIScreen mainScreen]bounds].size.width
 #define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
-////cell的title文字宽度
-//#define WIDTH DEVICESCREENWIDTH - 76 - 18 - 20 - 18
+//cell的title文字宽度 76:图片的宽，两个18:图片右侧距离屏幕右边的距离，文字右侧距离图片左侧的距离，20:文字左侧距离屏幕左侧的距离
+#define WIDTH DEVICESCREENWIDTH - 76 - 18 - 20 - 18
 
 #endif /* PrefixHeader_pch */

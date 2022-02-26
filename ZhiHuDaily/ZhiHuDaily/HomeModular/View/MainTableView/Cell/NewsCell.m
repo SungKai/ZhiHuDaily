@@ -4,10 +4,7 @@
 //
 //  Created by 宋开开 on 2022/2/10.
 //
-#define DEVICESCREENWIDTH [[UIScreen mainScreen]bounds].size.width
-#define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
-//cell的title文字宽度
-#define WIDTH DEVICESCREENWIDTH - 76 - 18 - 20 - 18
+
 #import "NewsCell.h"
 #import "Masonry.h"
 #import <UIImageView+AFNetworking.h>

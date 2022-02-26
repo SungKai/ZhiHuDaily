@@ -6,7 +6,6 @@
 //
 
 #import "ArticleModel.h"
-#import "MJExtension.h"
 #import "NetWorkTool.h"
 @implementation ArticleModel
 //文章内容
