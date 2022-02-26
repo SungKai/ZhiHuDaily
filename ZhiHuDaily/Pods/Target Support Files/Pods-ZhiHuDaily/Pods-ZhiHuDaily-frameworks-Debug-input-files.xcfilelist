@@ -1,4 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-ZhiHuDaily/Pods-ZhiHuDaily-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
-${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework
 ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
