@@ -4,7 +4,7 @@
 //
 //  Created by 宋开开 on 2022/2/13.
 //
-//此类为主页的TableView
+//此类为主页的TableView，即新闻列表
 #import <UIKit/UIKit.h>
 #import "NewsCell.h"
 #import "EverydayNewsModel.h"

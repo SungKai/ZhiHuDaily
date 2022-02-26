@@ -150,12 +150,32 @@
 
 ## 3 重要的技术点
 
+- 根据提供的api，实现绝大部分功能 
+
 - AFNetworking框架的使用与转化模型，转化成模型后的存储
+
 - MVC模式下准确高效地把数据通过Controller交到View中并让其展示数据
+
 - 各种界面跳转
+
 - 使用代理进行数据传递
+
 - Banner的自动轮播，拉伸放大
+
 - WKWebView的⽹⻚展示
+
+- 单例模式：`ManagerViewController`的单例和网络请求单例
+
+- 常公共宏定义类prefix
+
+  ```objective-c
+  //偏好设置的宏定义
+  #define USERDEFAULTS [NSUserDefaults standardUserDefaults]
+  //屏幕的宽和长
+  #define DEVICESCREENWIDTH [[UIScreen mainScreen]bounds].size.width
+  #define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
+  ```
+
 - 常用功能的封装
   - `UILabel + AutoHeight`:  能够根据文本内容，并填入一些其他值来确定该UILabel的Frame，具有屏幕适配功能
   - `NSDate + Day`:能够得到今天的day，month，也能将month的数字转化为中文

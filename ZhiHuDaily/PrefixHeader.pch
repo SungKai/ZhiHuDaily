@@ -5,6 +5,7 @@
 //  Created by 宋开开 on 2022/2/22.
 //
 
+//公共宏定义类prefix
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 //偏好设置的宏定义
@@ -12,5 +13,7 @@
 //屏幕的宽和长
 #define DEVICESCREENWIDTH [[UIScreen mainScreen]bounds].size.width
 #define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
+////cell的title文字宽度
+//#define WIDTH DEVICESCREENWIDTH - 76 - 18 - 20 - 18
 
 #endif /* PrefixHeader_pch */

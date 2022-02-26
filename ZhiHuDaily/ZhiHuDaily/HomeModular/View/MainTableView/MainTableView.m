@@ -40,8 +40,11 @@
 }
 //每个cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    //设置无数据状态
     NewsCell *newsCell = [NewsCell creatCellDefault:tableView];
+    //取出Model里面的数据，把相应数据给相应cell
     DataModel *dataModel = self.everydayNews[indexPath.section].stories[indexPath.row];
+    
     return  [newsCell cellWithInformation:newsCell WithTitleText:dataModel.title WithHintText:dataModel.hint WithImageURL:dataModel.imageURL];
 }
 

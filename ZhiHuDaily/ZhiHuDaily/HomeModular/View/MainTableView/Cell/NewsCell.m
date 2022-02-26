@@ -37,7 +37,7 @@
     }
     return newsCell;
 }
-//设置cell的数据
+//拿到数据，设置cell的数据
 - (NewsCell *)cellWithInformation:(NewsCell *)cell WithTitleText:(NSString *)titleText WithHintText:(NSString *)hintText WithImageURL:(NSString *)imageURL{
     cell.title.text = titleText;
     cell.hint.text = hintText;

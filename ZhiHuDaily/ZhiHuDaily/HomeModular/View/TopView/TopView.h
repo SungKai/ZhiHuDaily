@@ -4,7 +4,7 @@
 //
 //  Created by 宋开开 on 2022/2/4.
 //
-//此类为顶部的TopView
+//此类为顶部的TopView，用于展示今日日期与进入个人界面
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
