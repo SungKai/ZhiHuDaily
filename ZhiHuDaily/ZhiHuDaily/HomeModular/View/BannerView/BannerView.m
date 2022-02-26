@@ -69,7 +69,7 @@
     [self bringSubviewToFront:self.pageControl];
     if (!self.timer) {
         __weak typeof(self) weakSelf = self;
-        self.timer = [NSTimer timerWithTimeInterval:2.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        self.timer = [NSTimer timerWithTimeInterval:5.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
             if (weakSelf) {
                 [weakSelf nextPage];
             }

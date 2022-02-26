@@ -2,21 +2,19 @@
 
 ## 1 简要介绍
 
-### 1 基本信息
+### 1.1 基本信息
 
 - 制作者：宋嘉明
 - 制作内容：知乎日报仿写
 - 使用语言：Objective-C
 
-### 2 程序架构与使用的第三方框架
+### 1.2 程序架构与使用的第三方框架
 
 - 使用MVC设计模式
 - 主要使用AFNetworking第三方框架来进行网络请求
 - 主要使用Masonry第三方框架来设置控件位置和实现屏幕适配
 
-### 2 功能与使用步骤
-
-### 1 主页
+### 1.3 功能与使用步骤
 
 - 可展示自动播放的banner，pageControl可以随着图片的滑动更改当前颜色
 
@@ -68,7 +66,7 @@
 
 ## 2 构成模块
 
-### 1 HomeModular
+### 2.1 HomeModular
 
 #### Controller：
 
@@ -91,10 +89,10 @@
   - 下拉刷新
 
 - **同时使用了代理来传递数据**：
-  - **点击进入新闻详情页**：点击事件下，`MainTableView`  , `BannerView`通过代理传递`indexPath`信息给`HomeViewController`, `HomeViewController`根据传进来的indexPath找到相应的文章ID, 并找到相对应的文章`ID`同样通过代理发送给专门处理跳转事件的`ManagerViewController`, 并返回一个相应的`NewsViewController`来达到界面跳转效果
+  - **点击进入新闻详情页**：点击事件下，`MainTableView`  , `BannerView`通过代理传递`indexPath`信息给`HomeViewController`, `HomeViewController`根据传进来的indexPath找到相应的文章ID, 同样通过代理把相应ID发送给专门处理跳转事件的`ManagerViewController`, 并返回一个相应的`NewsViewController`来达到界面跳转效果
   - **点击进入个人界面**：点击事件下，`TopView`通过代理的方式告诉`HomeViewController`界面要跳转的讯息，`HomeViewController`也将用代理的方式告诉`ManagerViewController`，代理方法将会返回一个适合的个人界面
   - **刷新过往新闻**：收到`MainTableView`用代理发送过来的`section`信息，并进行过往请求，并重新加载`MainTableView`数据
-  - **传递日期给每个过往新闻的`headerView`的日期**
+  - 传递日期给每个过往新闻的`headerView`的日期
   - **banner的滚动放大效果**：`MainTableView`通过代理传递偏移量给`HomeViewController`，在由`HomeViewController`把偏移量通过代理交给`BannerView`
 
 - **事件处理**：
@@ -113,11 +111,11 @@
 
 #### Model:
 
-- `EverydayNewsModel`:  数据交换，最重要的功能是装着每天的新闻并将其传送给`MainTableView`  
+- `EverydayNewsModel`:  数据交换，最重要的功能是装着每天的新闻并将其传送给`HomeViewController`
 - `DayModel`:  网络请求，一天的新闻，里面装着每个cell的新闻
 - `DataModel`:  模块封装，具体每个cell新闻的信息
 
-### 2 NewsModular
+### 2.2 NewsModular
 
 #### Controller：
 
@@ -137,7 +135,7 @@
 
 `ArticleModel`:  主要去请求文章内容和新闻额外信息两个数据
 
-### 3 PersonModular
+### 2.3 PersonModular
 
 #### Controller：
 
@@ -168,13 +166,13 @@
 
 - 伪登陆
 
-### 4 不足与心得体会
+## 4 不足与心得体会
 
 - 不足：banner的拉伸比较奇怪
 
   ![bannerPull](bannerPull.gif) 
 
-- 心得体会：这是第一次写一个比较完整的项目，去实现比较完整的功能，我个人认为这个项目很好，把大部分所学的知识都用上了，另外还给了我探索的空间，让更深一步的知道了理论与实践的天差地别，同样我自己也在一次次的重构与优化中看到过去不足的自己，从而静下心来去想我改怎么去写的更好，怎么样在已经实现了需求的情况下再去追求代码的可读性。
+- 心得体会：这是第一次写一个比较完整的项目，去实现比较完整的功能，我认为这个项目很好，把大部分所学的知识都用上了，还另外给了我探索的空间，让我更深一步的知道了理论与实践的天差地别。同样，我自己也在一次次的重构与优化中看到过去不足的自己，从而静下心来去想我应该怎样去改，怎么去写的更好，怎么在已经实现了需求的情况下再去追求代码的可读性。
 
 
 
