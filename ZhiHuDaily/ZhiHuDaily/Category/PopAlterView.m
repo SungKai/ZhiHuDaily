@@ -7,6 +7,8 @@
   
 #import "PopAlterView.h"
 #import "Masonry.h"
+#import "Header.h"
+
 @interface PopAlterView()
 @property (nonatomic, strong) UIView *popView;
 @property (nonatomic, strong) UILabel *titleLab;
