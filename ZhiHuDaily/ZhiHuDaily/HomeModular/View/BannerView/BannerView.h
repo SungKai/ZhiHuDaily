@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSArray<BannerModel *> *dataArray;
 @property (nonatomic,assign) BOOL isScrolling;
 @property (nonatomic,assign) CGFloat offsetY;
+
+- (NSInteger)currentPage;
+
 @end
 
 NS_ASSUME_NONNULL_END

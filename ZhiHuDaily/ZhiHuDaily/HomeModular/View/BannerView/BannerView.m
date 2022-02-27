@@ -135,6 +135,11 @@
         }
     }
 }
+
+- (NSInteger)currentPage {
+    return self.scrollView.contentOffset.x / self.scrollView.bounds.size.width;
+}
+
 #pragma mark - 懒加载
 - (UIScrollView *)scrollView{
     if (!_scrollView){
