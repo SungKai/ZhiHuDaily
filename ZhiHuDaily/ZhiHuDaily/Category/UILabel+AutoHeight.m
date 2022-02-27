@@ -10,21 +10,25 @@
 
 @implementation UILabel (AutoHeight)
 
-- (CGRect)numberOflinesTotal:(NSString *)text AndFontOfSize:(NSInteger)size AndLeft:(CGFloat)left AndRight:(CGFloat)right AndTop:(CGFloat)y AndBottom:(CGFloat)bottom AndInterval:(CGFloat)interval AndMaxNumberOfLine:(NSInteger)maxNumOfLine{
+- (CGSize)MaxLabelWidth:(NSString *)text FontOfSize:(NSInteger)size MaxWidth:(CGFloat)maxWidth MaxNumberOfLine:(NSInteger)maxNumOfLine Interval:(CGFloat)interval{
     //文字展开一行的宽度
     CGSize originSize = [text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:size],NSFontAttributeName,nil]];
-    //计算宽度
-    CGFloat width = DEVICESCREENWIDTH - left - right;
     //把所有文字都展现所需要的行数
-    NSInteger count = originSize.width / width + 1;
+    NSInteger count = originSize.width / maxWidth + 1;
+    CGFloat width = 0;
+    //大于最大行数
     if (count > maxNumOfLine){
         count = maxNumOfLine;
     }
-        self.numberOfLines = count;
-    CGFloat height = count * originSize.height + interval * (count + 1);
-    if (bottom){
-        y = bottom - height;
+    self.numberOfLines = count;
+    //不满一行
+    if (count == 1){
+        width = originSize.width;
+    }else{
+        width = maxWidth;
     }
-    return CGRectMake(left, y, width, height);
+    //高度
+    CGFloat height = count * originSize.height + interval * (count + 1);
+    return CGSizeMake(width, height);
 }
 @end

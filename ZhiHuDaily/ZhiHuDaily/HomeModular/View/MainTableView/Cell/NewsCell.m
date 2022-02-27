@@ -49,7 +49,10 @@
 }
 //设置title行数
 - (void)calculateTitle:(NewsCell *)cell AndTitleText:(NSString *)str{
-    cell.title.frame = [cell.title numberOflinesTotal:str AndFontOfSize:17 AndLeft:20 AndRight:76 + 18 + 18 AndTop:15 AndBottom:0 AndInterval:3 AndMaxNumberOfLine:2];
+    CGRect tempTitleFrame = cell.title.frame;
+    tempTitleFrame.size = [cell.title MaxLabelWidth:str FontOfSize:17 MaxWidth:WIDTH  MaxNumberOfLine:2 Interval:3];
+    tempTitleFrame.origin = CGPointMake(20, 15);
+    cell.title.frame = tempTitleFrame;
     cell.hint.frame = CGRectMake(cell.title.frame.origin.x, cell.title.frame.origin.y + cell.title.frame.size.height + 3, cell.title.frame.size.width, 16);
 }
 #pragma mark - 懒加载

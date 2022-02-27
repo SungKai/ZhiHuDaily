@@ -177,7 +177,7 @@
   ```
 
 - 常用功能的封装
-  - `UILabel + AutoHeight`:  能够根据文本内容，并填入一些其他值来确定该UILabel的Frame，具有屏幕适配功能
+  - `UILabel + AutoHeight`:  能够根据文本内容，字号，字体间隔，来确定该UILabel的Size
   - `NSDate + Day`:能够得到今天的day，month，也能将month的数字转化为中文
 
 - 自定义

@@ -47,7 +47,10 @@
         //title
         NSString *titleText = self.dataArray[i].title;
         UILabel *titleLab = [self creatTitleLab:titleText];
-        titleLab.frame = [titleLab numberOflinesTotal:titleText AndFontOfSize:22 AndLeft:26 AndRight:28 AndTop:0 AndBottom:DEVICESCREENWIDTH - 40 AndInterval:3 AndMaxNumberOfLine:3];
+        CGRect tempTitleFrame = titleLab.frame;
+        tempTitleFrame.size = [titleLab MaxLabelWidth:titleText FontOfSize:22 MaxWidth:DEVICESCREENWIDTH - 26 - 28 MaxNumberOfLine:3 Interval:3];
+        tempTitleFrame.origin = CGPointMake(26, DEVICESCREENWIDTH - 40 - tempTitleFrame.size.height);
+        titleLab.frame = tempTitleFrame;
         //hint
         NSString *hintText = self.dataArray[i].hint;
         UILabel *hintLab = [self creatHintLab:hintText];
