@@ -86,8 +86,8 @@
 - (void)loadNewData{
     __weak typeof(self) weakSelf = self;
     [self.everydayModel gainLatestData:^{
-        //判断是否正在下拉刷新状态，若是 停止刷新
-        if ([self.mainTableView.refreshControl isRefreshing]) {
+        //判断是否正在下拉刷新状态，若是正在刷新，则停止刷新
+        if ([self.mainTableView.refreshControl isRefreshing]){
             [self.mainTableView.refreshControl endRefreshing];
         }
         //把加载来的数据传递到banner的model里面，

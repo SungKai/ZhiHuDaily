@@ -77,7 +77,6 @@
     }
     [NSTimer beginWithTimer:self.timer];
 }
-
 - (void)showBanner{
     
 }
