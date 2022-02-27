@@ -664,7 +664,7 @@
 				DEVELOPMENT_TEAM = MFF5WD4K94;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/songjiaming/Documents/GitHub/ZhiHuDaily/ZhiHuDaily/ZhiHuDaily/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/songjiaming/Documents/SungKai-ZhiHu/ZhiHuDaily/ZhiHuDaily/PrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -695,7 +695,7 @@
 				DEVELOPMENT_TEAM = MFF5WD4K94;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/songjiaming/Documents/GitHub/ZhiHuDaily/ZhiHuDaily/ZhiHuDaily/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/songjiaming/Documents/SungKai-ZhiHu/ZhiHuDaily/ZhiHuDaily/PrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
