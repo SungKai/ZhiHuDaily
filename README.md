@@ -72,7 +72,7 @@
 
 `HomeViewController`：
 
-- **Before请求**：
+- **网络请求**：
 
   - 在Latest网络请求之前就已将View加载无数据状态，Latest网络请求在单独的一个方法里加载
   - Before请求放在代理里面，在`MainTableView`滑到每个`section`的`footerView`时触发并用代理的方式进行Before请求

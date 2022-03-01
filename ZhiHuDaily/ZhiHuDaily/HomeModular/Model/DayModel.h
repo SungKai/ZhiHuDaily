@@ -5,7 +5,7 @@
 //  Created by 宋开开 on 2022/2/10.
 //
 
-//此类为一天的新闻数据
+//网络请求，一天的新闻，里面装着每个cell的新闻
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "DataModel.h"

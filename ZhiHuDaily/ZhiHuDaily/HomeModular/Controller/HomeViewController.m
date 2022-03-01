@@ -40,6 +40,7 @@
     UIRefreshControl *control = [[UIRefreshControl alloc]init];
     [control addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
     self.mainTableView.refreshControl = control;
+    // MVC：加载最新数据并从Model里面拿到数据转交给BannerView和MainTableView
     [self loadNewData];
 }
 //刷新，使登陆或退出后点击返回主界面时TopView的头像作出对应变化
@@ -87,19 +88,21 @@
 - (void)loadNewData{
     __weak typeof(self) weakSelf = self;
     [self.everydayModel gainLatestData:^{
-        //判断是否正在下拉刷新状态，若是正在刷新，则停止刷新
+        //1.判断是否正在下拉刷新状态，若是正在刷新，则停止刷新
         if ([self.mainTableView.refreshControl isRefreshing]){
             [self.mainTableView.refreshControl endRefreshing];
         }
-        //把加载来的数据传递到banner的model里面，
+        //2.把加载来的数据传递到banner的model里面，
         NSMutableArray<BannerModel *> *bannerModelArray = [NSMutableArray array];
         for (int i = 0; i < weakSelf.everydayModel.everydayNews[0].top_stories.count; i++) {
+            //从Model里面拿到数据
             DataModel *dataModel = weakSelf.everydayModel.everydayNews[0].top_stories[i];
+            //交给BannerView里面的BannerView
             BannerModel *bannerModel =[[BannerModel alloc]initWithImage:dataModel.image title:dataModel.title hint:dataModel.hint ID:dataModel.ID];
             [bannerModelArray addObject:bannerModel];
         }
         weakSelf.bannerView.dataArray = bannerModelArray;
-        //主页tableView数据传递
+        //3.主页tableView数据传递
         weakSelf.mainTableView.everydayNews = weakSelf.everydayModel.everydayNews;
         //刷新cell
         [weakSelf.mainTableView reloadData];
@@ -148,6 +151,7 @@
     //存在循环引用
     __weak typeof(self) weakSelf = self;
     [self.everydayModel gainBeforeDataAndDate:self.everydayModel.everydayNews.lastObject.date And:^{
+        //再次传递数据给mainTableView让其展示数据
         weakSelf.mainTableView.everydayNews = weakSelf.everydayModel.everydayNews;
         [self.mainTableView reloadData];
     }];

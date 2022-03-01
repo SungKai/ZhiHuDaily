@@ -27,11 +27,13 @@
 
 //跳转到新闻详情页
 - (UIViewController *)deliverTheID:(NSString *)ID{
+    //通过ID来找到新闻详情页
     NewsViewController *newsController = [[NewsViewController alloc]initWithID:ID];
     return newsController;
 }
 //跳转到个人登陆页
 - (UIViewController *)jumpToLogin{
+    //通过ID来找到新闻详情页
     PersonViewController *personViewController = [[PersonViewController alloc]init];
     return personViewController;
 }

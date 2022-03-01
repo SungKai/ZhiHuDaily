@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)nextSectionBlock:(NSInteger)section;
 //点击cell,把indexPath传给HomeViewController来进行页面跳转
 - (void)gainIndexPath:(NSIndexPath *)indexPath;
+//传递日期
+- (NSString *)gainDate:(NSInteger)section;
 //传递滚动信息
 -(void)scrollViewWithIsScrolling:(BOOL)isScrolling offsetY:(CGFloat)offsetY;
 @end

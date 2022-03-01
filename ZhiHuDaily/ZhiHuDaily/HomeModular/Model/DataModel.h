@@ -5,7 +5,7 @@
 //  Created by 宋开开 on 2022/2/10.
 //
 
-//此类为每个新闻的数据，直接对接返回的JSON数据
+//此类为模块封装，具体每个cell新闻的信息，直接对接返回的JSON数据
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN

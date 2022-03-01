@@ -43,7 +43,6 @@
     NewsCell *newsCell = [NewsCell creatCellDefault:tableView];
     //取出Model里面的数据，把相应数据给相应cell
     DataModel *dataModel = self.everydayNews[indexPath.section].stories[indexPath.row];
-    
     return  [newsCell cellWithInformation:newsCell WithTitleText:dataModel.title WithHintText:dataModel.hint WithImageURL:dataModel.imageURL];
 }
 
@@ -64,7 +63,7 @@ willDisplayFooterView:(nonnull UIView *)view forSection:(NSInteger)section{
 }
 //设置DateView为TableView的headerView
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    NSString *date = self.everydayNews[section].date;
+    NSString *date = [self.mainDelegate gainDate:section];
     NSInteger month = [[date substringWithRange:NSMakeRange(4, 2)] integerValue];
     NSInteger day = [[date substringFromIndex:6] integerValue];
     DateHeaderView *dateHeaderView = [[DateHeaderView alloc]initWithDateHeaderViewWithDate:[NSString stringWithFormat:@"%ld月%ld日", month, day]];
@@ -89,8 +88,10 @@ willDisplayFooterView:(nonnull UIView *)view forSection:(NSInteger)section{
 }
 //单击跳转新闻详情页
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //变灰操作
     NewsCell *cell = [self cellForRowAtIndexPath:indexPath];
     cell.title.textColor = [UIColor colorNamed:@"152_152_152&&101_101_101"];
+    //传递indexPath数据
     [self.mainDelegate gainIndexPath:indexPath];
 }
 

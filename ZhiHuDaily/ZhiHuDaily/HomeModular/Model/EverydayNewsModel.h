@@ -5,7 +5,7 @@
 //  Created by 宋开开 on 2022/2/10.
 //
 
-//此类装载着每天的新闻数据
+//此类用于数据交换，装载着每天的新闻数据
 #import <Foundation/Foundation.h>
 #import <UIkit/UIkit.h>
 #import "DayModel.h"

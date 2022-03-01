@@ -8,10 +8,10 @@
 #import "BannerView.h"
 #import "EverydayNewsModel.h"
 #import "Masonry.h"
-#import "UILabel+AutoHeight.h"
 #import "NSTimer+Time.h"
 #import <UIImageView+AFNetworking.h>
 #import "Header.h"
+#import "UILabel+AutoHeight.h"
 
 @interface BannerView()<UIScrollViewDelegate>
 @property (nonatomic, strong) UIScrollView *scrollView;

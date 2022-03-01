@@ -8,9 +8,9 @@
 #import "NewsCell.h"
 #import "Masonry.h"
 #import <UIImageView+AFNetworking.h>
-#import "UILabel+AutoHeight.h"
 #import "HomeViewController.h"
 #import "Header.h"
+#import "UILabel+AutoHeight.h"
 
 @implementation NewsCell
 //初始化
