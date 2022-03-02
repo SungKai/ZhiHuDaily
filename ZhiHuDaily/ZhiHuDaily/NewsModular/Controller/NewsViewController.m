@@ -26,7 +26,7 @@
         //网络请求
         //新闻内容
         [article getArticleID:ID AndModel:^(ArticleModel * _Nonnull model) {
-            
+            //加载webView
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:model.url]]];
         }];
         //新闻额外信息

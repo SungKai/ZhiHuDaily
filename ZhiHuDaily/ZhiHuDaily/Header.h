@@ -4,10 +4,9 @@
 //
 //  Created by SSR on 2022/2/26.
 //
-
+//常用公共宏定义类
 #ifndef Header_h
 #define Header_h
-
 
 //偏好设置的宏定义
 #define USERDEFAULTS [NSUserDefaults standardUserDefaults]

@@ -70,6 +70,7 @@
     return _image;
 }
 #pragma mark - 计算文字宽度
+//计算文字宽度
 - (CGFloat)calculateTheWidth:(NSString *)titleText{
     CGSize originSize = [titleText sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:20],NSFontAttributeName,nil]];
     return originSize.width;

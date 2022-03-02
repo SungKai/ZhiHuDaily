@@ -123,7 +123,6 @@
 - (void)getTheWebView:(WKWebView *)webView{
     self.webView = webView;
 }
-
 //返回主界面
 - (void)backToHomeView{
     [self.barDelegate back];

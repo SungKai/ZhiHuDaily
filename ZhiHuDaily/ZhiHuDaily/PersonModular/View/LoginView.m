@@ -435,7 +435,6 @@
         //已登陆状态
         [self.basicView addSubview:self.logOutView];
         self.logOutBtn.selected = NO;
-        
     }
 }
 @end
