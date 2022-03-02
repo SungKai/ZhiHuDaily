@@ -9,7 +9,6 @@
 #import "ArticleModel.h"
 #import "BarView.h"
 #import <WebKit/WebKit.h>
-#import "Header.h"
 
 @interface NewsViewController () <BarViewDelegate>
 @property (nonatomic, strong) ArticleModel *model;

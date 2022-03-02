@@ -8,7 +8,7 @@
 #import "BarView.h"
 #import "Masonry.h"
 #import "PopAlterView.h"
-#import "Header.h"
+
 
 @implementation BarView
 - (instancetype)init{

@@ -13,7 +13,6 @@
 #import "DataModel.h"
 #import <UIImageView+AFNetworking.h>
 #import "NSTimer+Time.h"
-#import "Header.h"
 
 @interface HomeViewController ()<BannerDelegate, MainTableDelegate, UIScrollViewDelegate,TopViewDelegate>
 @property (nonatomic, strong) TopView *topView;

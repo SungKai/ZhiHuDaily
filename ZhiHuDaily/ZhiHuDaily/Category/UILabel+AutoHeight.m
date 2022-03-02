@@ -6,7 +6,6 @@
 //
   
 #import "UILabel+AutoHeight.h"
-#import "Header.h"
 
 @implementation UILabel (AutoHeight)
 

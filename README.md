@@ -166,7 +166,7 @@
 
 - 单例模式：`ManagerViewController`的单例和网络请求单例
 
-- 常用公共宏定义类header
+- 常用公共宏定义类PrefixHeader.pch
 
   ```objective-c
   //偏好设置的宏定义

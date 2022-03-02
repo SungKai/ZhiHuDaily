@@ -1,13 +1,12 @@
 //
-//  Header.h
+//  PrefixHeader.pch
 //  ZhiHuDaily
 //
-//  Created by SSR on 2022/2/26.
+//  Created by 宋开开 on 2022/2/24.
 //
 //常用公共宏定义类
-#ifndef Header_h
-#define Header_h
-
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
 //偏好设置的宏定义
 #define USERDEFAULTS [NSUserDefaults standardUserDefaults]
 //屏幕的宽和长
@@ -15,6 +14,7 @@
 #define DEVICESCREENHEIGHT [[UIScreen mainScreen]bounds].size.height
 //cell的title文字宽度 76:图片的宽，两个18:图片右侧距离屏幕右边的距离，文字右侧距离图片左侧的距离，20:文字左侧距离屏幕左侧的距离
 #define WIDTH DEVICESCREENWIDTH - 76 - 18 - 20 - 18
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-
-#endif /* Header_h */
+#endif /* PrefixHeader_pch */

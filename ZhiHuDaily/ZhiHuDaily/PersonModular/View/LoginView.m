@@ -9,7 +9,6 @@
   
 #import "LoginView.h"
 #import "Masonry.h"
-#import "Header.h"
 
 @implementation LoginView
 //创建

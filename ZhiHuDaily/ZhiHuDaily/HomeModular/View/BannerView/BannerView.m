@@ -10,7 +10,6 @@
 #import "Masonry.h"
 #import "NSTimer+Time.h"
 #import <UIImageView+AFNetworking.h>
-#import "Header.h"
 #import "UILabel+AutoHeight.h"
 
 @interface BannerView()<UIScrollViewDelegate>
@@ -48,7 +47,7 @@
         NSString *titleText = self.dataArray[i].title;
         UILabel *titleLab = [self creatTitleLab:titleText];
         CGRect tempTitleFrame = titleLab.frame;
-        tempTitleFrame.size = [titleLab MaxLabelWidth:titleText FontOfSize:22 MaxWidth:DEVICESCREENWIDTH - 26 - 28 MaxNumberOfLine:3 Interval:3];
+        tempTitleFrame.size = [titleLab MaxLabelWidth:titleText FontOfSize:24 MaxWidth:DEVICESCREENWIDTH - 26 - 28 MaxNumberOfLine:3 Interval:3];
         tempTitleFrame.origin = CGPointMake(26, DEVICESCREENWIDTH - 40 - tempTitleFrame.size.height);
         titleLab.frame = tempTitleFrame;
         //hint
@@ -96,7 +95,7 @@
 //创建一个title
 - (UILabel *)creatTitleLab:(NSString *)text{
     UILabel *titleLab = [[UILabel alloc]init];
-    titleLab.font = [UIFont boldSystemFontOfSize:22];
+    titleLab.font = [UIFont boldSystemFontOfSize:24];
     titleLab.textColor = [UIColor whiteColor];
     titleLab.text = text;
     return titleLab;

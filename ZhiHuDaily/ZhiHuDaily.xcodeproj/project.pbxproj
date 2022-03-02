@@ -83,7 +83,7 @@
 		B59302DE27C1375A00ADE26D /* BarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarView.h; sourceTree = "<group>"; };
 		B59302DF27C1375A00ADE26D /* BarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarView.m; sourceTree = "<group>"; };
 		B59302E327C1388100ADE26D /* NewsColor‘.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "NewsColor‘.xcassets"; sourceTree = "<group>"; };
-		B5B852BC27CB96A60039291C /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		B5B852BD27CF8ED10039291C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		B5D1569627B633B300657E3A /* ZhiHuDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHuDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D156A327B633B300657E3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5D156A527B633B400657E3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -334,7 +334,7 @@
 			children = (
 				B501DE3A27CA5D150036EDA4 /* AppDelegate.h */,
 				B501DE3B27CA5D150036EDA4 /* AppDelegate.m */,
-				B5B852BC27CB96A60039291C /* Header.h */,
+				B5B852BD27CF8ED10039291C /* PrefixHeader.pch */,
 				B59302BA27BE299000ADE26D /* ControllerManager */,
 				B59302A027BD565900ADE26D /* HomeModular */,
 				B59302A427BD57D100ADE26D /* NewsModular */,
@@ -664,6 +664,7 @@
 				DEVELOPMENT_TEAM = MFF5WD4K94;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ZhiHuDaily/PrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -694,6 +695,7 @@
 				DEVELOPMENT_TEAM = MFF5WD4K94;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ZhiHuDaily/PrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZhiHuDaily/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

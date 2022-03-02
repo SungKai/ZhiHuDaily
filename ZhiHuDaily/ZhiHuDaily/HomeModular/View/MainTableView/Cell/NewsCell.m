@@ -9,7 +9,6 @@
 #import "Masonry.h"
 #import <UIImageView+AFNetworking.h>
 #import "HomeViewController.h"
-#import "Header.h"
 #import "UILabel+AutoHeight.h"
 
 @implementation NewsCell
