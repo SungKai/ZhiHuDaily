@@ -22,8 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) BOOL isScrolling;
 @property (nonatomic,assign) CGFloat offsetY;
 
-- (NSInteger)currentPage;
-
 @end
 
 NS_ASSUME_NONNULL_END

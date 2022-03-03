@@ -88,10 +88,10 @@ willDisplayFooterView:(nonnull UIView *)view forSection:(NSInteger)section{
 }
 //单击跳转新闻详情页
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //变灰操作
+    //1.变灰操作
     NewsCell *cell = [self cellForRowAtIndexPath:indexPath];
     cell.title.textColor = [UIColor colorNamed:@"152_152_152&&101_101_101"];
-    //传递indexPath数据
+    //2.为跳转做准备：传递indexPath数据
     [self.mainDelegate gainIndexPath:indexPath];
 }
 

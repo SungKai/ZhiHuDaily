@@ -49,6 +49,7 @@
 //设置title行数
 - (void)calculateTitle:(NewsCell *)cell AndTitleText:(NSString *)str{
     CGRect tempTitleFrame = cell.title.frame;
+    //得到文字相应的size
     tempTitleFrame.size = [cell.title MaxLabelWidth:str FontOfSize:17 MaxWidth:WIDTH  MaxNumberOfLine:2 Interval:3];
     tempTitleFrame.origin = CGPointMake(20, 15);
     cell.title.frame = tempTitleFrame;

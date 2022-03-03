@@ -23,12 +23,12 @@
     if (self){
         ArticleModel *article = [[ArticleModel alloc]init];
         //网络请求
-        //新闻内容
+        //1.新闻内容
         [article getArticleID:ID AndModel:^(ArticleModel * _Nonnull model) {
             //加载webView
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:model.url]]];
         }];
-        //新闻额外信息
+        //2.新闻额外信息
         [article getStoryExtra:ID AndModel:^(ArticleModel * _Nonnull model) {
             [self.barView setDataComments:model.comments AndLikeNum:model.popularity];
             //把当前提示框传给barView

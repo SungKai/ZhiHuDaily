@@ -16,8 +16,10 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong, nullable) NSTimer *timer;
-@property (nonatomic,strong) NSMutableArray<UIImageView*> *imageVArray;
-@property (nonatomic,strong) UIImageView *currentImageV;
+//储存图片的属性
+@property (nonatomic, strong) NSMutableArray<UIImageView*> *imageVArray;
+//当前图片，为了在缩放的时候用
+@property (nonatomic, strong) UIImageView *currentImageV;
 @end
 @implementation BannerView
 //重写init方法
@@ -30,10 +32,11 @@
     }
     return self;
 }
-#pragma mark - 加载Banne 设置图片轮播
+#pragma mark - 加载Banner 设置图片轮播
 - (void)setDataArray:(NSArray<BannerModel *> *)dataArray{
     _dataArray = dataArray;
-    for (UIImageView *imageV in self.imageVArray) {
+    //把之前存在的图片清空
+    for (UIImageView *imageV in self.imageVArray){
         [imageV removeFromSuperview];
         self.imageVArray = [NSMutableArray array];
     }
@@ -47,6 +50,7 @@
         NSString *titleText = self.dataArray[i].title;
         UILabel *titleLab = [self creatTitleLab:titleText];
         CGRect tempTitleFrame = titleLab.frame;
+        //得到文字的size
         tempTitleFrame.size = [titleLab MaxLabelWidth:titleText FontOfSize:24 MaxWidth:DEVICESCREENWIDTH - 26 - 28 MaxNumberOfLine:3 Interval:3];
         tempTitleFrame.origin = CGPointMake(26, DEVICESCREENWIDTH - 40 - tempTitleFrame.size.height);
         titleLab.frame = tempTitleFrame;
@@ -58,17 +62,18 @@
         [image setTag:i];
         NSLog(@"uuuuuuuuuu         %d", i);
         image.userInteractionEnabled = YES;
-        //添加手势
+        //添加手势，用于点击图片进入新闻详情页
         UITapGestureRecognizer *touchGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touch:)];
         [image addGestureRecognizer:touchGesture];
         [image addSubview:titleLab];
         [image addSubview:hintLab];
         [self.scrollView addSubview:image];
+        //把图片装入属性里
         [self.imageVArray addObject:image];
     }
     [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
     self.currentImageV = self.imageVArray.firstObject;
-    
+    //设置pageControl
     [self addSubview:self.pageControl];
     [self bringSubviewToFront:self.pageControl];
     if (!self.timer) {
@@ -81,9 +86,7 @@
     }
     [NSTimer beginWithTimer:self.timer];
 }
-- (void)showBanner{
-    
-}
+
 #pragma mark - 方法
 //点击图片进入新闻详情页
 - (void)touch:(UIGestureRecognizer *)gestureRecognizer{
@@ -134,17 +137,14 @@
         if (offsetY >= 0) {
             self.currentImageV.transform = CGAffineTransformMakeScale(1, 1);
         }else {
-            float scale = fabs(offsetY)/200.0 + 1;
+            float scale = fabs(offsetY) / 200.0 + 1;
             self.currentImageV.transform = CGAffineTransformMakeScale(scale, scale);
         }
     }
 }
 
-- (NSInteger)currentPage {
-    return self.scrollView.contentOffset.x / self.scrollView.bounds.size.width;
-}
-
 #pragma mark - 懒加载
+//scrollView
 - (UIScrollView *)scrollView{
     if (!_scrollView){
         _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, DEVICESCREENWIDTH, DEVICESCREENWIDTH)];
@@ -169,6 +169,13 @@
     }
     return _pageControl;
 }
+//imageVArray
+- (NSMutableArray<UIImageView *> *)imageVArray{
+    if (!_imageVArray) {
+        _imageVArray = [NSMutableArray array];
+    }
+    return _imageVArray;
+}
 #pragma mark - 轮播方法
 //每次循环的事件
 - (void)nextPage{
@@ -183,7 +190,6 @@
     self.pageControl.currentPage = page;
     self.currentImageV = self.imageVArray[page];
 }
-
 #pragma mark - <UIScrollViewDelegate>
 //监听滚动状态来使pageControl也作出相应变化
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -194,12 +200,7 @@
     self.pageControl.hidesForSinglePage = YES;
     self.currentImageV = self.imageVArray[page];
 }
-- (NSMutableArray<UIImageView *> *)imageVArray{
-    if (!_imageVArray) {
-        _imageVArray = [NSMutableArray array];
-    }
-    return _imageVArray;
-}
+
 - (void)dealloc{
     if (self.timer) {
         [self.timer end];

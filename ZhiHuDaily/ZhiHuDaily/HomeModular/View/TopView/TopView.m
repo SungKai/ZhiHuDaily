@@ -140,7 +140,7 @@
         return @"Account_Avatar";
     }
 }
-//登陆后再加载
+//登陆后再加载,改变头像
 - (void)reloadData{
     [self.personButton setBackgroundImage:[UIImage imageNamed:[self judgeTheAvatar]] forState:UIControlStateNormal];
 }
