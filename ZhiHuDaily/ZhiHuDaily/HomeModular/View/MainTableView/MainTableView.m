@@ -95,14 +95,6 @@ willDisplayFooterView:(nonnull UIView *)view forSection:(NSInteger)section{
     [self.mainDelegate gainIndexPath:indexPath];
 }
 
-//即将开始拖拽时停止计时器
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-//    这个方法实现了，那么就去调用，防止出现异常
-    if ([self.mainDelegate respondsToSelector:@selector(scrollViewWithIsScrolling:offsetY:)]) {
-        [self.mainDelegate scrollViewWithIsScrolling:YES offsetY:0];
-    }
-}
-
 //已经停止拖拽时开启计时器
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     if ([self.mainDelegate respondsToSelector:@selector(scrollViewWithIsScrolling:offsetY:)]) {
@@ -111,6 +103,7 @@ willDisplayFooterView:(nonnull UIView *)view forSection:(NSInteger)section{
 }
 #pragma mark - 滚动放大
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    // 这个方法实现了，那么就去调用，防止出现异常
     if ([self.mainDelegate respondsToSelector:@selector(scrollViewWithIsScrolling:offsetY:)]) {
         [self.mainDelegate scrollViewWithIsScrolling:YES offsetY:scrollView.contentOffset.y];
     }

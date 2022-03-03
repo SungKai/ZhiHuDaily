@@ -2,7 +2,7 @@
 //  BannerModel.m
 //  ZhiHuDaily
 //
-//  Created by apple on 2022/2/21.
+//  Created by 宋开开 on 2022/2/21.
 //
 
 #import "BannerModel.h"
