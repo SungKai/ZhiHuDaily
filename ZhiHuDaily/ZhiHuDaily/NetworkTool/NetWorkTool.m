@@ -7,8 +7,8 @@
 
 #import "NetWorkTool.h"
 
-static id _instance;
 @implementation NetworkTool
+static id _instance;
 //提供类方法让外界访问唯一的实例
 + (instancetype)shareNetworkTool{
     @synchronized (self) {
