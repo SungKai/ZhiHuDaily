@@ -135,7 +135,7 @@
 - (void)setOffsetY:(CGFloat)offsetY{
     if (self.currentImageV) {
         if (offsetY >= 0) {
-            self.currentImageV.transform = CGAffineTransformMakeScale(1, 1);
+            self.currentImageV.transform = CGAffineTransformMakeScale(1.0, 1.0);
         }else {
             float scale = fabs(offsetY) / 200.0 + 1;
             self.currentImageV.transform = CGAffineTransformMakeScale(scale, scale);
@@ -182,6 +182,7 @@
     if (self.dataArray.count == 0 || self.imageVArray.count == 0) {
         return;
     }
+
     NSInteger page = self.pageControl.currentPage + 1;
     if (page == self.dataArray.count){
         page = 0;

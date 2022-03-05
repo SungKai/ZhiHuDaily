@@ -33,7 +33,7 @@
 }
 //跳转到个人登陆页
 - (UIViewController *)jumpToLogin{
-    //通过ID来找到新闻详情页
+    //跳转到合适的个人登陆页
     PersonViewController *personViewController = [[PersonViewController alloc]init];
     return personViewController;
 }

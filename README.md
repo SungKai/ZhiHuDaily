@@ -42,13 +42,13 @@
 
 -   iPhone8:
 
-  ​					![](ipone8.png)							          
+  ​					<img src="ipone8.png" style="zoom:25%;" />							          
 
   ​							   
 
   iPhone 13 Pro Max:
 
-  ![](ipone13ProMax.png)
+  <img src="ipone13ProMax.png" style="zoom:25%;" /> 
 
   
 

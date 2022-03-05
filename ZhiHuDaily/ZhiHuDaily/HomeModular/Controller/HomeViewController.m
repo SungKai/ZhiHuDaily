@@ -68,7 +68,6 @@
         _mainTableView.backgroundColor = [UIColor colorNamed:@"255_255_255&26_26_26"];
         //把bannerView作为mainTableView的tableHeaderView
         _mainTableView.tableHeaderView = self.bannerView;
-        
     }
     return _mainTableView;
 }
@@ -87,7 +86,7 @@
 //加载最新数据
 - (void)loadNewData{
     __weak typeof(self) weakSelf = self;
-    //网络请求
+    //Latest网络请求
     [self.everydayModel gainLatestData:^{
         //1.判断是否正在下拉刷新状态，若是正在刷新，则停止刷新
         if ([self.mainTableView.refreshControl isRefreshing]){
@@ -102,22 +101,13 @@
             BannerModel *bannerModel =[[BannerModel alloc]initWithImage:dataModel.image title:dataModel.title hint:dataModel.hint ID:dataModel.ID];
             [bannerModelArray addObject:bannerModel];
         }
-        //重写set方法传递数据
+        //重写set方法传递banner数据
         weakSelf.bannerView.dataArray = bannerModelArray;
         //3.主页tableView数据传递
         weakSelf.mainTableView.everydayNews = weakSelf.everydayModel.everydayNews;
         //刷新cell
         [weakSelf.mainTableView reloadData];
     }];
-}
-//进新闻详情页,根据传进来的indexPath找到相应的文章ID
-- (void)deliverTheIndexPath:(NSIndexPath *)indexPath{
-    //实行跳转的操作应该是有Controller进行，由传进来的indexPath取出model里面的ID，再传ID给ManagerConreoller
-    NSString *ID = self.everydayModel.everydayNews[indexPath.section].stories[indexPath.row].ID;
-    NSLog(@"dsdsdsdsdsdsd    %@", ID);
-    UIViewController *newsController = [self.homeDelegate deliverTheID:ID];
-    //界面跳转
-    [self.navigationController pushViewController:newsController animated:YES];
 }
 //传递滚动数据
 - (void)scrollViewWithIsScrolling:(BOOL)isScrolling offsetY:(CGFloat)offsetY{
@@ -142,11 +132,15 @@
 - (void)loginView{
     [self.navigationController pushViewController:[self.homeDelegate jumpToLogin] animated:YES];
 }
-
 #pragma mark - <MainTableDelegate>
-//点击cell,把indexPath传给HomeViewController来进行页面跳转
+//进新闻详情页,点击cell,把indexPath传给HomeViewController来进行页面跳转,根据传进来的indexPath找到相应的文章ID
 - (void)gainIndexPath:(NSIndexPath *)indexPath{
-    [self deliverTheIndexPath:indexPath];
+    //实行跳转的操作应该是有Controller进行，由传进来的indexPath取出model里面的ID，再传ID给ManagerConreoller
+    NSString *ID = self.everydayModel.everydayNews[indexPath.section].stories[indexPath.row].ID;
+    NSLog(@"dsdsdsdsdsdsd    %@", ID);
+    UIViewController *newsController = [self.homeDelegate deliverTheID:ID];
+    //界面跳转
+    [self.navigationController pushViewController:newsController animated:YES];
 }
 //当下滑到每一组最后一个cell时，调用此方法来网络请求前一天的数据
 - (void)nextSectionBlock:(NSInteger)section{
